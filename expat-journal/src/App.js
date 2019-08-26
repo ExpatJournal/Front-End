@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import SignUp from './components/SignUp'
 import PhotoPage from './components/PhotoPage/PhotoPage';
+import DummyData from './DummyData'
 import "./App.css";
 
 //Component Imports:
 import LogInForm from './components/WelcomeBackForm/LogInForm';
 
 // Mock Data:
-import DummyData from './MockData/DummyData.json';
-const Data = DummyData;
-console.log(Data);
+import DumData from './MockData/DumData.json';
+const Data = DumData;
+const PostData = DummyData;
 
 function App() {
   const [userPosts, setUserPosts] = useState([]);
@@ -21,12 +22,8 @@ function App() {
     <div className="App">
       {/* <LogInForm/>
       <SignUp/> */}
-      
-      {data.map((value, key)=> {
-        return(
-        <PhotoPage dataprops={Data}/>
-        )
-        })} 
+
+     <PhotoPage data={PostData}/>
 
     </div>
   );

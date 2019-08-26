@@ -4,7 +4,10 @@ export default function PhotoPage(props){
     console.log('OBJ DATA:', props)
     return(
         <div>
-            <img src={props.dataprops.image}></img>
+            <section>
+                {/* <img src={}></img> */}
+                <input type='text' name='search' placeholder='search'></input>
+            </section>
         </div>
     );
 };

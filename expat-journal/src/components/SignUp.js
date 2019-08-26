@@ -27,12 +27,12 @@ return(
           <div className="form-group">
             {touched.password && errors.password && <p>{errors.password}</p>}
             <label className="label">Password</label>
-            <Field className="input" name="password" type="text" placeholder="Type here..." />
+            <Field className="input" name="password" type="password" placeholder="Type here..." />
           </div>
           <div className="form-group">
             {touched.passwordConfirm && errors.passwordConfirm && <p>{errors.passwordConfirm}</p>}
             <label className="label">Password Confirmation</label>
-            <Field className="input" name="passwordConfirm" type="text" placeholder="Type here..." />
+            <Field className="input" name="passwordConfirm" type="password" placeholder="Type here..." />
           </div>
           <button type="submit" className="btn">
           Submit &rarr;
@@ -61,15 +61,15 @@ export default withFormik({
   handleSubmit(values, formikBag) {
     // formikBag gives access to .push allowing a redirect after a user signs up
   console.log('values', values);
-  const url = "";
-  axiosWithAuth()
-    .post(url)
-    .then(response => {
-      console.log("res", response);
-      // formikBag.props.history.push("/friends");
-    })
-    .catch(e => {
-      console.log(e.response.data);
-    });
+  // const url = "";
+  // axiosWithAuth()
+  //   .post(url)
+  //   .then(response => {
+  //     console.log("res", response);
+  //     // formikBag.props.history.push("/friends");
+  //   })
+  //   .catch(e => {
+  //     console.log(e.response.data);
+  //   });
 }
 })(SignUp)

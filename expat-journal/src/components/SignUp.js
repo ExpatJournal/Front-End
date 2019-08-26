@@ -7,6 +7,7 @@ import { withFormik, Form, Field } from 'formik'
 const SignUp = ({ values, handleChange, errors, touched, status }) => {
 return(
   <div>
+    <h1>New User SignUp</h1>
     <Form className="form">
           <div className="form-group">
             {touched.firstName && errors.firstName && <p>{errors.firstName}</p>}

@@ -20,5 +20,4 @@ const DummyData = [
     imgURL: 'https://image.shutterstock.com/image-photo/cheerful-woman-wanderer-trendy-look-600w-360572705.jpg'},
   ]
 
-
 export default DummyData

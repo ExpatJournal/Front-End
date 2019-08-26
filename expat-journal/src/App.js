@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
+import Welcome from "./components/Welcome";
 import DummyData from "./DummyData";
-import "./App.css";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./App.css";
 
 // Contexts
 import { PostsContext } from "./contexts/PostsContext";
@@ -63,11 +64,12 @@ function App() {
 
   return (
     <Router>
-      <PostsContext.Provider value={{ allPosts }}>
+      <PostsContext.Provider value={{ allPosts, DummyData }}>
         <UserContext.Provider value={{ user, addPost, removePost, editPost }}>
           <div className="App">
-            <h1>Expat Journal</h1>
+            <Route exact path="/" component={Welcome} />
             <Route exact path="/signup" component={SignUp} />
+            {/* <Route exact path="/signup" component={SignUp} /> */}
           </div>
         </UserContext.Provider>
       </PostsContext.Provider>

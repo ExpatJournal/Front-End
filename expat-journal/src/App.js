@@ -2,26 +2,22 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+//Component Imports:
+import WelcomeBackForm from './components/WelcomeBackForm/WelcomeBackForm';
+
+// Mock Data:
+import DummyData from './MockData/DummyData.json';
+const Data = DummyData;
+
 function App() {
   const [userPosts, setUserPosts] = useState([]);
 
   const addPost = post => {};
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <WelcomeBackForm/>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
+import ProfilePage from "./components/ProfilePage";
 import DummyData from "./DummyData";
 import "./App.css";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
@@ -12,6 +13,10 @@ import { UserContext } from "./contexts/UserContext";
 function App() {
   const [user, setUser] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
+
+  useEffect(() => {
+    setUser(DummyData);
+  }, []);
 
   console.log(DummyData);
 
@@ -68,6 +73,13 @@ function App() {
           <div className="App">
             <h1>Expat Journal</h1>
             <Route exact path="/signup" component={SignUp} />
+            <Route
+              exact
+              path="/profile"
+              render={props => {
+                return <ProfilePage {...props} value={user} />;
+              }}
+            />
           </div>
         </UserContext.Provider>
       </PostsContext.Provider>

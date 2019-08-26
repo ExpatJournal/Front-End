@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import SignUp from './components/SignUp'
+import SignUp from "./components/SignUp";
 import "./App.css";
 import axiosWithAuth from "./utils/axiosWithAuth";
 
+// Contexts
+import { PostsContext } from "./contexts/PostsContext";
+import { UserContext } from "./contexts/UserContext";
+
 function App() {
-  const [userPosts, setUserPosts] = useState([]);
+  const [user, setUser] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
 
   const addPost = post => {
@@ -43,9 +47,13 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <SignUp />
-    </div>
+    <PostsContext.Provider value={{ allPosts }}>
+      <UserContext.Provider value={{ user, addPost, removePost, editPost }}>
+        <div className="App">
+          <SignUp />
+        </div>
+      </UserContext.Provider>
+    </PostsContext.Provider>
   );
 }
 

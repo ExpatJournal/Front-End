@@ -3,17 +3,19 @@ import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import styled from 'styled-components';
+import './LogInForm.css';
 
 const StyledDiv = styled.div`
-    background-color: red;
-    max-width: 30rem;
+    border: 1px solid black;
+    max-width: 20rem;
     margin: 1rem auto;
     display: flex;  
     flex-direction: column;
+    height: 400px;
 `;
 
 
-const WelcomeBackForm = ({ errors, touched, status }) => {
+const LogInForm = ({ errors, touched, status }) => {
 
     const [users, setUsers] = useState([]);
     // console.log('The Data === ', users);
@@ -49,7 +51,7 @@ const WelcomeBackForm = ({ errors, touched, status }) => {
     );
 };
 
-const FormikWelcomeBackForm = withFormik({
+const FormikLogInForm = withFormik({
 
     mapPropsToValues({ username, password}){
         return {
@@ -79,6 +81,6 @@ const FormikWelcomeBackForm = withFormik({
             setStatus(false);
         });
     }
-})(WelcomeBackForm);
+})(LogInForm);
 
-export default FormikWelcomeBackForm;
+export default FormikLogInForm;

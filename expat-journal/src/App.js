@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
+import SignUp from './components/SignUp'
 import "./App.css";
 
 //Component Imports:
-import WelcomeBackForm from './components/WelcomeBackForm/WelcomeBackForm';
+import LogInForm from './components/WelcomeBackForm/LogInForm';
 
 // Mock Data:
 import DummyData from './MockData/DummyData.json';
@@ -17,7 +17,8 @@ function App() {
 
   return (
     <div className="App">
-      <WelcomeBackForm/>
+      <LogInForm/>
+      <SignUp/>
     </div>
   );
 }

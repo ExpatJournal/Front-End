@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
+import DummyData from "./DummyData";
 import "./App.css";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -11,6 +12,8 @@ import { UserContext } from "./contexts/UserContext";
 function App() {
   const [user, setUser] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
+
+  console.log(DummyData);
 
   const addPost = post => {
     axiosWithAuth()

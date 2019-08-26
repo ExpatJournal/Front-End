@@ -10,29 +10,29 @@ return(
     <h1>New User SignUp</h1>
     <Form className="form">
           <div className="form-group">
-            {touched.firstName && errors.firstName && <p>{errors.firstName}</p>}
-            <label className="label">First Name</label>
-            <Field className="input" name="firstName" type="text" placeholder="Type here..." />
+            {touched.name && errors.name && <p>{errors.name}</p>}
+            <label className="label">Name</label>
+            <Field className="input" name="name" type="text" placeholder="First and last name" />
           </div>
           <div className="form-group">
-            {touched.lastName && errors.lastName && <p>{errors.lastName}</p>}
-            <label className="label">Last Name</label>
-            <Field className="input" name="lastName" type="text" placeholder="Type here..." />
+            {touched.email && errors.email && <p>{errors.email}</p>}
+            <label className="label">Email</label>
+            <Field className="input" name="email" type="text" placeholder="Email" />
           </div>
           <div className="form-group">
             {touched.username && errors.username && <p>{errors.username}</p>}
             <label className="label">Username</label>
-            <Field className="input" name="username" type="text" placeholder="Type here..." />
+            <Field className="input" name="username" type="text" placeholder="Pick a username" />
           </div>
           <div className="form-group">
             {touched.password && errors.password && <p>{errors.password}</p>}
             <label className="label">Password</label>
-            <Field className="input" name="password" type="password" placeholder="Type here..." />
+            <Field className="input" name="password" type="password" placeholder="Enter a password" />
           </div>
           <div className="form-group">
             {touched.passwordConfirm && errors.passwordConfirm && <p>{errors.passwordConfirm}</p>}
             <label className="label">Password Confirmation</label>
-            <Field className="input" name="passwordConfirm" type="password" placeholder="Type here..." />
+            <Field className="input" name="passwordConfirm" type="password" placeholder="Confirm your password" />
           </div>
           <button type="submit" className="btn">
           Submit &rarr;
@@ -42,18 +42,18 @@ return(
   )
 }
 export default withFormik({
-  mapPropsToValues({ firstName, lastName, username, password, passwordConfirm } ) {
+  mapPropsToValues({ name, email, username, password, passwordConfirm } ) {
     return {
-      firstName: firstName || "",
-      lastName: lastName || "",
+      name: name || "",
+      email: email || "",
       username: username || "",
       password: password || "",
       passwordConfirm: passwordConfirm || "",
     };
   },
   validationSchema: Yup.object().shape({
-    firstName: Yup.string().required('Please enter your first name'),
-    lastName: Yup.string().required('Please enter your last name'),
+    name: Yup.string().required('Please enter your name'),
+    email: Yup.string().email().required('Please enter your email'),
     username: Yup.string().required('Please enter a username'),
     password: Yup.string().min(6, 'Password must be at least 6 characters').required('Please enter a valid password'),
     passwordConfirm: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')

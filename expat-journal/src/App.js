@@ -63,8 +63,8 @@ function App() {
       <PostsContext.Provider value={{ allPosts }}>
         <UserContext.Provider value={{ user, addPost, removePost, editPost }}>
           <div className="App">
+            <h1>Expat Journal</h1>
             <Route exact path="/signup" component={SignUp} />
-            <SignUp />
           </div>
         </UserContext.Provider>
       </PostsContext.Provider>

@@ -1,8 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const [userPosts, setUserPosts] = useState([]);
+
+  const addPost = post => {};
   return (
     <div className="App">
       <header className="App-header">

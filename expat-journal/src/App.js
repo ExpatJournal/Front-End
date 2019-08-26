@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-<<<<<<< HEAD
 import SignUp from './components/SignUp'
 import PhotoPage from './components/PhotoPage/PhotoPage';
 import DummyData from './DummyData'
-=======
-import SignUp from "./components/SignUp";
-import DummyData from "./DummyData";
->>>>>>> 9760a450a746682e54563171fed6c97b01bf4f5c
+// import SignUp from "./components/SignUp";
+// import DummyData from "./DummyData";
 import "./App.css";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -24,21 +21,9 @@ const Data = DumData;
 const PostData = DummyData;
 
 function App() {
-<<<<<<< HEAD
   const [userPosts, setUserPosts] = useState([]);
 
   const addPost = post => {};
-
-
-  return (
-    <div className="App">
-      {/* <LogInForm/>
-      <SignUp/> */}
-
-     <PhotoPage data={PostData}/>
-
-    </div>
-=======
   const [user, setUser] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
 
@@ -97,11 +82,14 @@ function App() {
           <div className="App">
             <h1>Expat Journal</h1>
             <Route exact path="/signup" component={SignUp} />
+
+              
+
           </div>
         </UserContext.Provider>
       </PostsContext.Provider>
     </Router>
->>>>>>> 9760a450a746682e54563171fed6c97b01bf4f5c
+
   );
 }
 

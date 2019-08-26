@@ -8,7 +8,6 @@ function App() {
   const addPost = post => {};
   return (
     <div className="App">
-      <div>Test</div>
       <SignUp />
     </div>
   );

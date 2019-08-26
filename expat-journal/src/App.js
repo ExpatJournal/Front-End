@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
 import "./App.css";
-import axiosWithAuth from "./utils/axiosWithAuth";
+import { axiosWithAuth } from "./utils/axiosWithAuth";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Contexts
 import { PostsContext } from "./contexts/PostsContext";
@@ -58,13 +59,16 @@ function App() {
   };
 
   return (
-    <PostsContext.Provider value={{ allPosts }}>
-      <UserContext.Provider value={{ user, addPost, removePost, editPost }}>
-        <div className="App">
-          <SignUp />
-        </div>
-      </UserContext.Provider>
-    </PostsContext.Provider>
+    <Router>
+      <PostsContext.Provider value={{ allPosts }}>
+        <UserContext.Provider value={{ user, addPost, removePost, editPost }}>
+          <div className="App">
+            <Route exact path="/signup" component={SignUp} />
+            <SignUp />
+          </div>
+        </UserContext.Provider>
+      </PostsContext.Provider>
+    </Router>
   );
 }
 

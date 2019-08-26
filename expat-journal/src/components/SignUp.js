@@ -53,7 +53,7 @@ export default withFormik({
   },
   validationSchema: Yup.object().shape({
     name: Yup.string().required('Please enter your name'),
-    email: Yup.string().required('Please enter your email'),
+    email: Yup.string().email().required('Please enter your email'),
     username: Yup.string().required('Please enter a username'),
     password: Yup.string().min(6, 'Password must be at least 6 characters').required('Please enter a valid password'),
     passwordConfirm: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match')

@@ -9,11 +9,14 @@ const Feed = () => {
   // console.log('DummyData', DummyData);
 
   return(
-  <div className="feed-wrapper">
-    {DummyData.map(post => (
-      <FeedCard user={post.username} content={post.content} location={post.location} img={post.imgURL} key={post.id} />
-    ) )}
-  </div>
+    <div className="explore-header">
+      <p>Explore</p>
+      <div className="feed-wrapper">
+        {DummyData.map(post => (
+          <FeedCard user={post.username} content={post.content} location={post.location} img={post.imgURL} key={post.id} />
+        ) )}
+      </div>
+    </div>
   )
 }
 export default Feed

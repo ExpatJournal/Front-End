@@ -105,8 +105,9 @@ function App() {
       <PostsContext.Provider value={{ allPosts, DummyData }}>
         <UserContext.Provider value={{ user, addPost, removePost, editPost }}>
           <div className="App">
-            <HamburgerNav />
+            {/* <HamburgerNav /> */}
             <Route exact path="/" component={Welcome} />
+            {/* <Route exact path="/posts/:id" component={} /> */}
             <Route exact path="/signup" component={SignUp} />
             <Route
               exact

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 
 
-const HamburgerNav = (props) => {
+const LoggedInNav = (props) => {
 
   const [menu, setMenu] = useState(true)
   const handleClick = () => {
@@ -16,17 +16,13 @@ const HamburgerNav = (props) => {
       <div className="menu-wrapper">
 
         <div className ={menu ? "menu toggled" : "menu"}>
-          <p onClick={handleClick}><Link to="/signup"
-          style={{ textDecoration: 'none', color: 'white'  }}>
-          Sign Up
-          </Link></p>
           <p onClick={handleClick}><Link to="/feed"
           style={{ textDecoration: 'none', color: 'white'  }}>
           Explore
           </Link></p>
           <p onClick={handleClick}><Link to="/login"
           style={{ textDecoration: 'none', color: 'white'  }}>
-          Log In
+          Log Out
           </Link>
           </p>
         </div>
@@ -34,4 +30,4 @@ const HamburgerNav = (props) => {
     </div>
   )
 }
-export default HamburgerNav
+export default LoggedInNav

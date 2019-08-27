@@ -1,0 +1,20 @@
+.pageText{
+    display: flex;
+    justify-content: center;
+}
+
+.dragNDrop{
+    border: 1px solid black;
+    height: 15rem;
+    width: 15rem;
+    display: flex;
+    margin: 1rem auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerContainer{
+    display: flex;
+    flex-direction: row;
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentForm from '../comment';
+import CommentForm from '../CommentForm';
 import FeedCard from '../FeedCard';
 
 //component import
@@ -14,12 +14,8 @@ export default function PhotoPage(props){
          
                 <input type='text' name='search' placeholder='search'></input>
                <div className = "PhotoPage-content">
-                 <div>
-                     <FeedCard/>
-                 </div>
-                 <div>
             <CommentForm />
-            </div>
+            
               </div>
             </section>
         </div>

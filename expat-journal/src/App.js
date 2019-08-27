@@ -37,7 +37,7 @@ function App() {
   useEffect(() => {
     axios.get(`https://expatjournal.herokuapp.com/api/posts`).then(res => {
       console.log("GET all posts res: ", res);
-      setAllPosts(res.data);
+      // setAllPosts(res.data);
     });
   }, [userPosts]);
 

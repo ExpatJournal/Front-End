@@ -147,3 +147,12 @@
   background: #4ea24e;
   padding: 0;
 }
+
+.PhotoPage-content {
+  display:  flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+
+}
+

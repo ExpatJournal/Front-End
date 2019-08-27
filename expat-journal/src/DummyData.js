@@ -22,7 +22,7 @@ const DummyData = [
     location: 'East Texas',
     imgURL: 'https://images.pexels.com/photos/2679814/pexels-photo-2679814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     id:4},
-///Edit here
+
     {username: "KoreaFan123",
     content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     location: 'South Africa',

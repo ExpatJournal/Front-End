@@ -51,6 +51,7 @@
 
 .signup-wrapper h4 {
   color: #228B22;
+  text-align: center;
 }
 
 .form-group {
@@ -73,8 +74,42 @@
   border: 1px solid #19A0FA ;
   color: white;
   width: 190px;
+  cursor: pointer;
 }
 
 .feed-img-wrapper {
   margin: auto;
+}
+
+.burger-menu {
+  text-align: right;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+}
+
+.fa-bars {
+  font-size: 36px;
+  cursor: pointer;
+  color: #4EA24E;
+}
+
+.toggled {
+  display: none;
+}
+
+.menu-wrapper {
+  /* border: 1px solid black; */
+  /* display: inline-block; */
+  /* max-width: 250px; */
+  text-align: center;
+
+}
+
+.menu {
+  text-decoration: none;
+  color: white;
+  background: #4EA24E;
+  padding: 0;
 }

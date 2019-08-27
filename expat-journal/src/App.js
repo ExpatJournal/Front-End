@@ -6,20 +6,22 @@ import Welcome from "./components/Welcome";
 import FormikLogInForm from './components/LogIn';
 import Feed from "./components/Feed";
 import Nav from "./components/Nav";
+import HamburgerNav from "./components/HamburgerNav";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 // Contexts
 import { PostsContext } from "./contexts/PostsContext";
 import { UserContext } from "./contexts/UserContext";
 
 //Component Imports:
-import LogInForm from './components/WelcomeBackForm/LogInForm';
+
 
 // Mock Data:
-import DumData from './MockData/DumData.json';
-const Data = DumData;
+// import DumData from './MockData/DumData.json';
+// const Data = DumData;
 const PostData = DummyData;
 
 function App() {
@@ -80,7 +82,7 @@ function App() {
       <PostsContext.Provider value={{ allPosts, DummyData }}>
         <UserContext.Provider value={{ user, addPost, removePost, editPost }}>
           <div className="App">
-            <Nav />
+            <HamburgerNav />
             <Route exact path="/" component={Welcome} />
             <Route exact path="/signup" component={SignUp} />
 
@@ -94,6 +96,6 @@ function App() {
     </Router>
 
   );
-}   
+}
 
 export default App;

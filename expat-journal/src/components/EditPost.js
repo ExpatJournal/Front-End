@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { UserContext } from "../contexts/UserContext";
 
 const EditPost = props => {
   console.log("edit props: ", props);
   const [updatedPost, setUpdatedPost] = useState({});
+  const { editPost } = useContext(UserContext);
 
   console.log("Grabbed id: ", props.match.params.id);
 
@@ -34,7 +36,7 @@ const EditPost = props => {
         </div>
       </div>
       <div className="edit-buttons">
-        <button>Update</button>
+        <button onClick={e => editPost(updatedPost, e)}>Update</button>
         <button>Cancel</button>
       </div>
     </div>

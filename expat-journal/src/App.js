@@ -99,18 +99,6 @@ function App() {
       });
   };
 
-  const getUser = () => {
-    axiosWithAuth()
-      .get(`https://expatjournal.herokuapp.com/auth/journal`)
-      .then(res => {
-        console.log("GET USER res: ", res);
-        setUserPosts(res.data);
-      })
-      .catch(err => {
-        console.log(err.response);
-      });
-  };
-
   return (
     <Router>
       <PostsContext.Provider value={{ allPosts, DummyData }}>

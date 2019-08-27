@@ -6,7 +6,7 @@ const Feed = () => {
 
 
   const { DummyData } = useContext(PostsContext)
-  console.log('DummyData', DummyData);
+  // console.log('DummyData', DummyData);
 
   return(
   <div className="feed-wrapper">

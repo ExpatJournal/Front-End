@@ -10,7 +10,7 @@ const FeedCard = ({ user, content, location, img }) => {
         <img src={img}/>
       </div>
       <h4>{user}</h4>
-      <h5>{location} <i class="far fa-compass"></i></h5>
+      <h5>{location} <i className="far fa-compass"></i></h5>
       <p>{content}</p>
     </div>
 

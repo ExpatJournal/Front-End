@@ -41,18 +41,17 @@ export default withFormik({
     password: Yup.string().required('Please enter your password'),
   }),
   handleSubmit(values, formikBag) {
-    // formikBag gives access to .push allowing a redirect after a user signs up
+    // formikBag gives access to .push allowing a redirect after a user logs in
   console.log('values', values);
-  formikBag.props.history.push("/feed")
-  // const url = "";
-  // axiosWithAuth()
-  //   .post(url)
-  //   .then(response => {
-  //     console.log("res", response);
-  //     // formikBag.props.history.push("/feed");
-  //   })
-  //   .catch(e => {
-  //     console.log(e.response.data);
-  //   });
+  const url = "https://expatjournal.herokuapp.com/auth/users/login";
+  axiosWithAuth()
+    .post(url, values)
+    .then(response => {
+      console.log("res", response);
+      formikBag.props.history.push("/feed");
+    })
+    .catch(e => {
+      console.log(e.response.data);
+    });
 }
 })(LogIn)

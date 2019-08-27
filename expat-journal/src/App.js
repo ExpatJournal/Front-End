@@ -19,9 +19,6 @@ import { UserContext } from "./contexts/UserContext";
 
 //Component Imports:
 
-// Mock Data:
-// import DumData from './MockData/DumData.json';
-// const Data = DumData;
 const PostData = DummyData;
 
 function App() {
@@ -40,7 +37,7 @@ function App() {
     });
   }, [user]);
 
-  console.log(DummyData);
+  // console.log(DummyData);
   // console.log('DummyData', DummyData);
 
   const addPost = post => {
@@ -118,11 +115,8 @@ function App() {
                 return <ProfilePage {...props} value={user} />;
               }}
             />
-
             <Route exact path="/login" component={FormikLogInForm} />
-
             <Route exact path="/feed" render={props => <Feed {...props} />} />
-            {/* <Route exact path="/signup" component={SignUp} /> */}
           </div>
         </UserContext.Provider>
       </PostsContext.Provider>

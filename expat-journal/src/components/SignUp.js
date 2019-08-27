@@ -104,7 +104,7 @@ export default withFormik({
       })
       .then(response => {
         console.log("res", response);
-        // formikBag.props.history.push("/friends");
+        formikBag.props.history.push("/login");
       })
       .catch(e => {
         console.log(e.response.data);

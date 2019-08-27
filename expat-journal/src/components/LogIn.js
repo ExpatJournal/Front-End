@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import * as Yup from 'yup'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { withFormik, Form, Field } from 'formik'
+import { withFormik, Form, Field } from 'formik';
+import HamburgerNav from './HamburgerNav'
+
 
 const LogIn = ({ values, handleChange, errors, touched, status }) => {
 return(
-  <div className="signup-wrapper">
+  <div>
+    <HamburgerNav />
+    <div className="signup-wrapper">
+
     <h4>Log In</h4>
     <Form className="sign-up-form">
 
@@ -26,7 +31,8 @@ return(
           Submit &rarr;
           </button>
         </Form>
-  </div>
+      </div>
+    </div>
   )
 }
 export default withFormik({
@@ -41,18 +47,17 @@ export default withFormik({
     password: Yup.string().required('Please enter your password'),
   }),
   handleSubmit(values, formikBag) {
-    // formikBag gives access to .push allowing a redirect after a user signs up
+    // formikBag gives access to .push allowing a redirect after a user logs in
   console.log('values', values);
-  formikBag.props.history.push("/feed")
-  // const url = "";
-  // axiosWithAuth()
-  //   .post(url)
-  //   .then(response => {
-  //     console.log("res", response);
-  //     // formikBag.props.history.push("/feed");
-  //   })
-  //   .catch(e => {
-  //     console.log(e.response.data);
-  //   });
+  const url = "https://expatjournal.herokuapp.com/auth/users/login";
+  axiosWithAuth()
+    .post(url, values)
+    .then(response => {
+      console.log("res", response);
+      formikBag.props.history.push("/feed");
+    })
+    .catch(e => {
+      console.log(e.response.data);
+    });
 }
 })(LogIn)

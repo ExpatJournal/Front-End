@@ -20,9 +20,6 @@ import { UserContext } from "./contexts/UserContext";
 
 //Component Imports:
 
-// Mock Data:
-// import DumData from './MockData/DumData.json';
-// const Data = DumData;
 const PostData = DummyData;
 
 function App() {
@@ -41,7 +38,7 @@ function App() {
     });
   }, [userPosts]);
 
-  console.log(DummyData);
+  // console.log(DummyData);
   // console.log('DummyData', DummyData);
 
   const addPost = post => {
@@ -111,8 +108,9 @@ function App() {
           value={{ userPosts, addPost, removePost, editPost }}
         >
           <div className="App">
-            <HamburgerNav />
+            {/* <HamburgerNav /> */}
             <Route exact path="/" component={Welcome} />
+            {/* <Route exact path="/posts/:id" component={} /> */}
             <Route exact path="/signup" component={SignUp} />
             <Route
               exact
@@ -121,9 +119,7 @@ function App() {
                 return <ProfilePage {...props} value={userPosts} />;
               }}
             />
-
             <Route exact path="/login" component={FormikLogInForm} />
-
             <Route exact path="/feed" render={props => <Feed {...props} />} />
             <Route exact path="/PhotoPage/:id" render={props => <PhotoPage {...props} />} />
            

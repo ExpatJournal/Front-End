@@ -81,7 +81,7 @@ function App() {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/signup" component={SignUp} />
               
-              <PhotoPage />
+
 
 
             {/* <Route exact path="/signup" component={SignUp} /> */}

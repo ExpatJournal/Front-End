@@ -2,7 +2,7 @@ import React from 'react';
 
 
 //component import
-import SideBar from '../HamburgerMenu/HamburgerMenu';
+// import SideBar from '../HamburgerMenu/HamburgerMenu';
 
 export default function PhotoPage(props){
     console.log('OBJ DATA:', props)

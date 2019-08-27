@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SignUp from "./components/SignUp";
+import SignUp from './components/SignUp'
+import PhotoPage from './components/PhotoPage/PhotoPage';
+import "./App.css";
 import Welcome from "./components/Welcome";
 import FormikLogInForm from './components/LogIn';
 import Feed from "./components/Feed";
@@ -7,13 +9,21 @@ import Nav from "./components/Nav";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "./App.css";
 
 // Contexts
 import { PostsContext } from "./contexts/PostsContext";
 import { UserContext } from "./contexts/UserContext";
 
+//Component Imports:
+import LogInForm from './components/WelcomeBackForm/LogInForm';
+
+// Mock Data:
+import DumData from './MockData/DumData.json';
+const Data = DumData;
+const PostData = DummyData;
+
 function App() {
+  const [userPosts, setUserPosts] = useState([]);
   const [user, setUser] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
 
@@ -73,13 +83,16 @@ function App() {
             <Nav />
             <Route exact path="/" component={Welcome} />
             <Route exact path="/signup" component={SignUp} />
+
             <Route exact path='/login' component={FormikLogInForm} />
+
             <Route exact path="/feed" render={props => <Feed {...props} />} />
             {/* <Route exact path="/signup" component={SignUp} /> */}
           </div>
         </UserContext.Provider>
       </PostsContext.Provider>
     </Router>
+
   );
 }   
 

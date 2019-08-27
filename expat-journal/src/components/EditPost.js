@@ -23,6 +23,12 @@ const EditPost = props => {
       });
   };
 
+  const sendUpdate = e => {
+    e.preventDefault();
+    editPost(updatedPost);
+    // props.history.push("/profile");
+  };
+
   console.log("post to edit: ", updatedPost);
 
   return (
@@ -43,7 +49,7 @@ const EditPost = props => {
         </div>
       </div>
       <div className="edit-buttons">
-        <button onClick={e => editPost(updatedPost, e)}>Update</button>
+        <button onClick={sendUpdate}>Update</button>
         <button>Cancel</button>
       </div>
     </div>

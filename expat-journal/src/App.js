@@ -77,15 +77,13 @@ function App() {
       });
   };
 
-  const editPost = (editedPost, e) => {
-    console.log("edited post: ", editedPost);
+  const editPost = editedPost => {
     const newEdit = {
       title: editedPost.title,
       location: editedPost.location,
       post: editedPost.post
     };
-    console.log("newEdit: ", newEdit);
-    e.preventDefault();
+    // e.preventDefault();
     axiosWithAuth()
       .put(
         `https://expatjournal.herokuapp.com/auth/journal/${editedPost.id}`,

@@ -5,7 +5,6 @@ import PhotoPage from "./components/PhotoPage/PhotoPage";
 import Welcome from "./components/Welcome";
 import FormikLogInForm from "./components/LogIn";
 import Feed from "./components/Feed";
-import PhotoPage from "./components/PhotoPage";
 import Nav from "./components/Nav";
 import HamburgerNav from "./components/HamburgerNav";
 import DummyData from "./DummyData";
@@ -123,7 +122,8 @@ function App() {
             <Route exact path="/login" component={FormikLogInForm} />
 
             <Route exact path="/feed" render={props => <Feed {...props} />} />
-            <Route path="/PhotoPage/:id"  render={props=> <PhotoPage {...props} PhotoPage={PhotoPage} /> }/>
+            <Route exact path="/PhotoPage/:id" render={props => <PhotoPage {...props} />} />
+           
             {/* <Route exact path="/signup" component={SignUp} /> */}
           </div>
         </UserContext.Provider>

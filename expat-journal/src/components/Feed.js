@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import { PostsContext } from '../contexts/PostsContext'
 import FeedCard from './FeedCard'
 
-const Feed = (props) => {
+const Feed = () => {
+
 
   const { DummyData } = useContext(PostsContext)
   console.log('DummyData', DummyData);

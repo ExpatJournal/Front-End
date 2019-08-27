@@ -3,6 +3,7 @@ import SignUp from './components/SignUp'
 import PhotoPage from './components/PhotoPage/PhotoPage';
 import "./App.css";
 import Welcome from "./components/Welcome";
+import FormikLogInForm from './components/LogIn';
 import Feed from "./components/Feed";
 import Nav from "./components/Nav";
 import DummyData from "./DummyData";
@@ -82,9 +83,8 @@ function App() {
             <Nav />
             <Route exact path="/" component={Welcome} />
             <Route exact path="/signup" component={SignUp} />
-             
 
-
+            <Route exact path='/login' component={FormikLogInForm} />
 
             <Route exact path="/feed" render={props => <Feed {...props} />} />
             {/* <Route exact path="/signup" component={SignUp} /> */}
@@ -94,6 +94,6 @@ function App() {
     </Router>
 
   );
-}
+}   
 
 export default App;

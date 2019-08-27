@@ -12,11 +12,24 @@ const Nav = (props) => {
 
   return(
     <div className="burger-menu">
-      <i className="fas fa-bars" onClick={handleClick}></i>
-      <div className ={menu ? "menu toggled" : "menu"}>
-        <p><Link to="/signup">Sign Up</Link></p>
-        <p><Link to="/feed">View your feed</Link></p>
-        <p><Link to="/login">Log In</Link></p>
+      <i className="fas fa-bars " onClick={handleClick}></i>
+      <div className="menu-wrapper">
+
+        <div className ={menu ? "menu toggled" : "menu"}>
+          <p><Link to="/signup"
+          style={{ textDecoration: 'none', color: 'white'  }}>
+          Sign Up
+          </Link></p>
+          <p><Link to="/feed"
+          style={{ textDecoration: 'none', color: 'white'  }}>
+          View your feed
+          </Link></p>
+          <p><Link to="/login"
+          style={{ textDecoration: 'none', color: 'white'  }}>
+          Log In
+          </Link>
+          </p>
+        </div>
       </div>
     </div>
   )

@@ -3,7 +3,8 @@ import { PostsContext } from '../contexts/PostsContext'
 import { Link } from "react-router-dom";
 import FeedCard from './FeedCard'
 
-const Feed = (props) => {
+const Feed = () => {
+
 
   const { DummyData } = useContext(PostsContext)
   console.log('DummyData', DummyData);

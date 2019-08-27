@@ -9,6 +9,41 @@
   max-height: 220px;
 }
 
+.post-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.post-container img {
+  max-width: 200px;
+  max-height: 220px;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.action-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.dashboard-header input {
+  background: url("./search.png") top left no-repeat;
+  height: 30px;
+  padding-left: 30px;
+  width: 500px;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
 .feed-card {
   display: flex;
   flex-direction: column;
@@ -50,7 +85,7 @@
 }
 
 .signup-wrapper h4 {
-  color: #228B22;
+  color: #228b22;
   text-align: center;
 }
 
@@ -71,7 +106,7 @@
   padding: 10px;
   border-radius: 15px;
   background-color: #999999;
-  border: 1px solid #19A0FA ;
+  border: 1px solid #19a0fa;
   color: white;
   width: 190px;
   cursor: pointer;
@@ -92,7 +127,7 @@
 .fa-bars {
   font-size: 36px;
   cursor: pointer;
-  color: #4EA24E;
+  color: #4ea24e;
 }
 
 .toggled {
@@ -104,12 +139,11 @@
   /* display: inline-block; */
   /* max-width: 250px; */
   text-align: center;
-
 }
 
 .menu {
   text-decoration: none;
   color: white;
-  background: #4EA24E;
+  background: #4ea24e;
   padding: 0;
 }

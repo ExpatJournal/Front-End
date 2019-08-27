@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
 import ProfilePage from "./components/ProfilePage";
-import PhotoPage from "./components/PhotoPage/PhotoPage";
 import Welcome from "./components/Welcome";
 import FormikLogInForm from "./components/LogIn";
 import Feed from "./components/Feed";
@@ -10,6 +9,7 @@ import HamburgerNav from "./components/HamburgerNav";
 import EditPost from "./components/EditPost";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
+import FormikImageUpload from './components/FormikImageUpload';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
@@ -120,6 +120,7 @@ function App() {
               }}
             />
             <Route exact path="/login" component={FormikLogInForm} />
+            <Route exact path="/newpost" component={FormikImageUpload}/>
             <Route exact path="/feed" render={props => <Feed {...props} />} />
             {/* <Route exact path="/signup" component={SignUp} /> */}
 

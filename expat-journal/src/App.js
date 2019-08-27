@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
 import Welcome from "./components/Welcome";
 import Feed from "./components/Feed";
+import PhotoPage from "./components/PhotoPage";
 import Nav from "./components/Nav";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
@@ -73,6 +74,7 @@ function App() {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/feed" render={props => <Feed {...props} />} />
+            <Route path="/PhotoPage/:id"  render={props=> <PhotoPage {...props} PhotoPage={PhotoPage} /> }/>
             {/* <Route exact path="/signup" component={SignUp} /> */}
           </div>
         </UserContext.Provider>

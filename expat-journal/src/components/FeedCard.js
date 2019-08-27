@@ -6,9 +6,11 @@ const FeedCard = ({ user, content, location, img }) => {
   return(
 
     <div className="feed-card">
-      <img src={img}/>
+      <div className="feed-img-wrapper">
+        <img src={img}/>
+      </div>
       <h4>{user}</h4>
-      <h5>{location}</h5>
+      <h5>{location} <i class="far fa-compass"></i></h5>
       <p>{content}</p>
     </div>
 

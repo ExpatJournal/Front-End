@@ -20,6 +20,17 @@
   padding: 10px;
 }
 
+.feed-card h4 {
+  margin: 5px 0;
+}
+.feed-card h5 {
+  margin: 7px 0;
+  color: darkgray;
+}
+.feed-card p {
+  margin: 7px 0;
+}
+
 .welcome-wrapper {
   text-align: center;
 }
@@ -43,7 +54,6 @@
 }
 
 .form-group {
-
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -63,4 +73,8 @@
   border: 1px solid #19A0FA ;
   color: white;
   width: 190px;
+}
+
+.feed-img-wrapper {
+  margin: auto;
 }

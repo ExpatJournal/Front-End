@@ -9,7 +9,7 @@ import HamburgerNav from "./components/HamburgerNav";
 import EditPost from "./components/EditPost";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
-import FormikImageUpload from './components/ImageUpload';
+import FormikImageUpload from './components/FormikImageUpload';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";

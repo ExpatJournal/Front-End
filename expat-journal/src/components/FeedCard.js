@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FeedCard = ({ user, content, location, img }) => {
-  console.log(user);
+  // console.log(user);
 
   return(
 

@@ -29,7 +29,7 @@ function App() {
   const [user, setUser] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
 
-  console.log('DummyData', DummyData);
+  // console.log('DummyData', DummyData);
 
   const addPost = post => {
     axiosWithAuth()

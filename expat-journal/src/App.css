@@ -80,3 +80,17 @@
 .feed-img-wrapper {
   margin: auto;
 }
+
+.burger-menu {
+  text-align: right;
+  margin: 10px;
+}
+
+.fa-bars {
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.toggled {
+  display: none;
+}

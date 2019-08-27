@@ -7,8 +7,6 @@ const EditPost = props => {
   const [updatedPost, setUpdatedPost] = useState({});
   const { editPost } = useContext(UserContext);
 
-  console.log("Grabbed id: ", props.match.params.id);
-
   useEffect(() => {
     getPost(props.match.params.id);
   }, []);
@@ -25,6 +23,8 @@ const EditPost = props => {
       });
   };
 
+  console.log("post to edit: ", updatedPost);
+
   return (
     <div className="edit-page">
       <h3>Edit Post</h3>
@@ -32,7 +32,14 @@ const EditPost = props => {
         <img src="" />
         <div className="edit-text">
           <h4>Update Caption</h4>
-          <input type="text" name="content" value={updatedPost.post} />
+          <input
+            type="text"
+            name="post"
+            value={updatedPost.post}
+            onChange={e =>
+              setUpdatedPost({ ...updatedPost, post: e.target.value })
+            }
+          />
         </div>
       </div>
       <div className="edit-buttons">

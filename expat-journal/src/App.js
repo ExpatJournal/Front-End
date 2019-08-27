@@ -78,13 +78,19 @@ function App() {
   };
 
   const editPost = (editedPost, e) => {
+    console.log("edited post: ", editedPost);
+    const newEdit = {
+      title: editedPost.title,
+      location: editedPost.location,
+      post: editedPost.post
+    };
+    console.log("newEdit: ", newEdit);
     e.preventDefault();
     axiosWithAuth()
-      .put(`https://expatjournal.herokuapp.com/auth/journal/${editedPost.id}`, {
-        title: editedPost.title,
-        location: editPost.location,
-        post: editedPost.post
-      })
+      .put(
+        `https://expatjournal.herokuapp.com/auth/journal/${editedPost.id}`,
+        newEdit
+      )
       .then(res => {
         console.log("PUT res: ", res);
         const tempPosts = userPosts.map(post => {

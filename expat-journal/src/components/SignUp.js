@@ -6,23 +6,23 @@ import { withFormik, Form, Field } from 'formik'
 
 const SignUp = ({ values, handleChange, errors, touched, status }) => {
 return(
-  <div>
-    <h1>New User SignUp</h1>
-    <Form className="form">
+  <div className="signup-wrapper">
+    <h4>Sign Up to Expat's Journal</h4>
+    <Form className="sign-up-form">
           <div className="form-group">
             {touched.name && errors.name && <p>{errors.name}</p>}
             <label className="label">Name</label>
-            <Field className="input" name="name" type="text" placeholder="First and last name" />
+            <Field className="input" name="name" type="text" placeholder="What's your name?" />
           </div>
           <div className="form-group">
             {touched.email && errors.email && <p>{errors.email}</p>}
             <label className="label">Email</label>
-            <Field className="input" name="email" type="text" placeholder="Email" />
+            <Field className="input" name="email" type="text" placeholder="What's your email?" />
           </div>
           <div className="form-group">
             {touched.username && errors.username && <p>{errors.username}</p>}
             <label className="label">Username</label>
-            <Field className="input" name="username" type="text" placeholder="Pick a username" />
+            <Field className="input" name="username" type="text" placeholder="Pick a username!" />
           </div>
           <div className="form-group">
             {touched.password && errors.password && <p>{errors.password}</p>}

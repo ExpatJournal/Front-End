@@ -69,31 +69,31 @@ const DummyData = [
     content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     location: 'Porto',
     imgURL: 'https://images.pexels.com/photos/2828121/pexels-photo-2828121.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    id:13},
+    id:12},
 
     {username: "Not Larry",
     content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     location: 'Venice',
     imgURL: 'https://images.pexels.com/photos/2823132/pexels-photo-2823132.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    id:14},
+    id:13},
 
     {username: "JeveStobs",
     content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     location: 'Apple Boat',
     imgURL: 'https://images.pexels.com/photos/9190/sea-boat-luxury-travel.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    id:15},
+    id:14},
 
     {username: "GillBates",
     content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     location: 'London',
     imgURL: 'https://images.pexels.com/photos/2834461/pexels-photo-2834461.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    id:16},
+    id:15},
 
     {username: "Sven",
     content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     location: 'Indonesia',
     imgURL: 'https://images.pexels.com/photos/2832086/pexels-photo-2832086.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    id:12},
+    id:16},
   ]
 
 export default DummyData

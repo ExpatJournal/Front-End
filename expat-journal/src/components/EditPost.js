@@ -5,21 +5,23 @@ const EditPost = props => {
   console.log("edit props: ", props);
   const [updatedPost, setUpdatedPost] = useState({});
 
-  useEffect(() => {
-    getPost(props.match.params.id);
-  }, []);
+  console.log("Grabbed id: ", props.match.params.id);
 
-  const getPost = id => {
-    axios.get(
-      `https://expatjournal.herokuapp.com/api/posts/${id}`
-        .then(res => {
-          console.log("getPost res: ", res);
-        })
-        .catch(err => {
-          console.log(err.response);
-        })
-    );
-  };
+  //   useEffect(() => {
+  //     getPost(props.match.params.id);
+  //   }, []);
+
+  //   const getPost = id => {
+  //     axios.get(
+  //       `https://expatjournal.herokuapp.com/api/posts/${id}`
+  //         .then(res => {
+  //           console.log("getPost res: ", res);
+  //         })
+  //         .catch(err => {
+  //           console.log(err.response);
+  //         })
+  //     );
+  //   };
 
   return (
     <div className="edit-page">

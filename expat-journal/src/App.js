@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
 import Welcome from "./components/Welcome";
+import Feed from "./components/Feed";
+import Nav from "./components/Nav";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -14,7 +16,7 @@ function App() {
   const [user, setUser] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
 
-  console.log(DummyData);
+  // console.log('DummyData', DummyData);
 
   const addPost = post => {
     axiosWithAuth()
@@ -67,8 +69,10 @@ function App() {
       <PostsContext.Provider value={{ allPosts, DummyData }}>
         <UserContext.Provider value={{ user, addPost, removePost, editPost }}>
           <div className="App">
+            <Nav />
             <Route exact path="/" component={Welcome} />
             <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/feed" render={props => <Feed {...props} />} />
             {/* <Route exact path="/signup" component={SignUp} /> */}
           </div>
         </UserContext.Provider>

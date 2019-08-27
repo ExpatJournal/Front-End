@@ -5,17 +5,30 @@ const ProfileCard = props => {
   const goToEdit = () => {
     props.history.push(`/edit/${props.post.id}`);
   };
+  console.log("profile card props: ", props);
+
+  const deletePost = () => {};
 
   return (
     <div className="feed-card">
       <div className="feed-img-wrapper">
         <img src={props.post.imgURL} />
       </div>
+      {/* <h4>{user}</h4> */}
+      <h5>
+        {props.post.location} <i className="far fa-compass"></i>
+      </h5>
+      <p>{props.post.post}</p>
       <div className="button-container">
         <button className="edit" onClick={goToEdit}>
           Edit
         </button>
-        <button className="delete">&times;</button>
+        <button
+          className="delete"
+          onClick={e => props.removePost(props.post.id, e)}
+        >
+          &times;
+        </button>
       </div>
     </div>
   );

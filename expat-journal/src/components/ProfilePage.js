@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../contexts/UserContext";
 import ProfileCard from "./ProfileCard";
-import LoggedInNav from './LoggedInNav'
+import LoggedInNav from "./LoggedInNav";
 
 const ProfilePage = props => {
-  const { userPosts } = useContext(UserContext);
+  const { userPosts, removePost } = useContext(UserContext);
   return (
     <div className="dashboard">
       <LoggedInNav />
@@ -21,7 +21,12 @@ const ProfilePage = props => {
       <h3>My Posts</h3>
       <div className="post-container">
         {userPosts.map(post => (
-          <ProfileCard {...props} post={post} key={post.id} />
+          <ProfileCard
+            {...props}
+            post={post}
+            key={post.id}
+            removePost={removePost}
+          />
         ))}
       </div>
     </div>

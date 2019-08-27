@@ -7,21 +7,21 @@ const EditPost = props => {
 
   console.log("Grabbed id: ", props.match.params.id);
 
-  //   useEffect(() => {
-  //     getPost(props.match.params.id);
-  //   }, []);
+  useEffect(() => {
+    getPost(props.match.params.id);
+  }, []);
 
-  //   const getPost = id => {
-  //     axios.get(
-  //       `https://expatjournal.herokuapp.com/api/posts/${id}`
-  //         .then(res => {
-  //           console.log("getPost res: ", res);
-  //         })
-  //         .catch(err => {
-  //           console.log(err.response);
-  //         })
-  //     );
-  //   };
+  const getPost = id => {
+    axios
+      .get(`https://expatjournal.herokuapp.com/api/posts/${id}`)
+      .then(res => {
+        console.log("getPost res: ", res);
+        setUpdatedPost(res.data);
+      })
+      .catch(err => {
+        console.log(err.response);
+      });
+  };
 
   return (
     <div className="edit-page">
@@ -30,7 +30,7 @@ const EditPost = props => {
         <img src="" />
         <div className="edit-text">
           <h4>Update Caption</h4>
-          <input type="text" name="content" />
+          <input type="text" name="content" value={updatedPost.post} />
         </div>
       </div>
       <div className="edit-buttons">

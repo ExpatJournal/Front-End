@@ -12,6 +12,7 @@ import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
+import PrivateRoute from "./components/PrivateRoute";
 import "./App.css";
 
 // Contexts
@@ -28,13 +29,22 @@ function App() {
   const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {
-    setUserPosts(DummyData);
+    // setUserPosts(DummyData);
+    axiosWithAuth()
+      .get(`https://expatjournal.herokuapp.com/auth/journal`)
+      .then(res => {
+        console.log("login fetch res: ", res);
+        setUserPosts(res.data);
+      })
+      .catch(err => {
+        console.log(err.response);
+      });
   }, []);
 
   useEffect(() => {
     axios.get(`https://expatjournal.herokuapp.com/api/posts`).then(res => {
       console.log("GET all posts res: ", res);
-      // setAllPosts(res.data);
+      setAllPosts(res.data);
     });
   }, [userPosts]);
 
@@ -112,13 +122,7 @@ function App() {
             <Route exact path="/" component={Welcome} />
             {/* <Route exact path="/posts/:id" component={} /> */}
             <Route exact path="/signup" component={SignUp} />
-            <Route
-              exact
-              path="/profile"
-              render={props => {
-                return <ProfilePage {...props} value={userPosts} />;
-              }}
-            />
+            <PrivateRoute exact path="/profile" component={ProfilePage} />
             <Route exact path="/login" component={FormikLogInForm} />
             <Route exact path="/feed" render={props => <Feed {...props} />} />
             {/* <Route exact path="/signup" component={SignUp} /> */}

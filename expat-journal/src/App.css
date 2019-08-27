@@ -51,6 +51,7 @@
 
 .signup-wrapper h4 {
   color: #228B22;
+  text-align: center;
 }
 
 .form-group {
@@ -73,6 +74,7 @@
   border: 1px solid #19A0FA ;
   color: white;
   width: 190px;
+  cursor: pointer;
 }
 
 .feed-img-wrapper {

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
 import ProfilePage from "./components/ProfilePage";
+import Welcome from "./components/Welcome";
+import Feed from "./components/Feed";
+import Nav from "./components/Nav";
 import DummyData from "./DummyData";
-import "./App.css";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "./App.css";
 
 // Contexts
 import { PostsContext } from "./contexts/PostsContext";
@@ -19,6 +22,7 @@ function App() {
   }, []);
 
   console.log(DummyData);
+  // console.log('DummyData', DummyData);
 
   const addPost = post => {
     axiosWithAuth()
@@ -68,10 +72,11 @@ function App() {
 
   return (
     <Router>
-      <PostsContext.Provider value={{ allPosts }}>
+      <PostsContext.Provider value={{ allPosts, DummyData }}>
         <UserContext.Provider value={{ user, addPost, removePost, editPost }}>
           <div className="App">
-            <h1>Expat Journal</h1>
+            <Nav />
+            <Route exact path="/" component={Welcome} />
             <Route exact path="/signup" component={SignUp} />
             <Route
               exact
@@ -80,6 +85,8 @@ function App() {
                 return <ProfilePage {...props} value={user} />;
               }}
             />
+            <Route exact path="/feed" render={props => <Feed {...props} />} />
+            {/* <Route exact path="/signup" component={SignUp} /> */}
           </div>
         </UserContext.Provider>
       </PostsContext.Provider>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { PostsContext } from '../contexts/PostsContext'
 import FeedCard from './FeedCard'
+import HamburgerNav from './HamburgerNav'
 
 const Feed = () => {
 
@@ -10,6 +11,7 @@ const Feed = () => {
 
   return(
     <div className="explore-header">
+      <HamburgerNav />
       <p>Explore</p>
       <div className="feed-wrapper">
         {DummyData.map(post => (

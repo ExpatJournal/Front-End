@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../contexts/UserContext";
-import FeedCard from "./FeedCard";
+import ProfileCard from "./ProfileCard";
 import LoggedInNav from './LoggedInNav'
 
-const ProfilePage = () => {
-  const { user } = useContext(UserContext);
+const ProfilePage = props => {
+  const { userPosts } = useContext(UserContext);
   return (
     <div className="dashboard">
       <LoggedInNav />
@@ -18,15 +18,10 @@ const ProfilePage = () => {
           {/* <button>Sign Out</button> */}
         </div>
       </div>
+      <h3>My Posts</h3>
       <div className="post-container">
-        {user.map(post => (
-          <FeedCard
-            user={post.username}
-            content={post.content}
-            location={post.location}
-            img={post.imgURL}
-            key={post.id}
-          />
+        {userPosts.map(post => (
+          <ProfileCard {...props} post={post} key={post.id} />
         ))}
       </div>
     </div>

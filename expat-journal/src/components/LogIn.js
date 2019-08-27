@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import * as Yup from 'yup'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
-import { withFormik, Form, Field } from 'formik'
+import { withFormik, Form, Field } from 'formik';
+import HamburgerNav from './HamburgerNav'
+
 
 const LogIn = ({ values, handleChange, errors, touched, status }) => {
 return(
-  <div className="signup-wrapper">
+  <div>
+    <HamburgerNav />
+    <div className="signup-wrapper">
+
     <h4>Log In</h4>
     <Form className="sign-up-form">
 
@@ -26,7 +31,8 @@ return(
           Submit &rarr;
           </button>
         </Form>
-  </div>
+      </div>
+    </div>
   )
 }
 export default withFormik({

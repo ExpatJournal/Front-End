@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
 import Welcome from "./components/Welcome";
+import FormikLogInForm from './components/LogIn';
 import Feed from "./components/Feed";
 import Nav from "./components/Nav";
 import DummyData from "./DummyData";
@@ -72,6 +73,7 @@ function App() {
             <Nav />
             <Route exact path="/" component={Welcome} />
             <Route exact path="/signup" component={SignUp} />
+            <Route exact path='/login' component={FormikLogInForm} />
             <Route exact path="/feed" render={props => <Feed {...props} />} />
             {/* <Route exact path="/signup" component={SignUp} /> */}
           </div>
@@ -79,6 +81,6 @@ function App() {
       </PostsContext.Provider>
     </Router>
   );
-}
+}   
 
 export default App;

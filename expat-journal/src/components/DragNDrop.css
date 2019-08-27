@@ -1,20 +1,43 @@
+.pageContainer{
+    height: 40rem;
+}
+
 .pageText{
     display: flex;
     justify-content: center;
-}
-
-.dragNDrop{
-    border: 1px solid black;
-    height: 15rem;
-    width: 15rem;
-    display: flex;
-    margin: 1rem auto;
-    justify-content: center;
-    align-items: center;
+    margin-top: 10rem;
+    color: #389738;
 }
 
 .centerContainer{
     display: flex;
+    justify-content: center;
+}
+.centerContainer{
+    display: flex;
     flex-direction: row;
+}
+
+.dragNDrop{
+    border: 1px solid black;
+    height: 10rem;
+    width: 10rem;
+    display: flex;
+    margin: 4rem 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group{
+    margin-top: 3rem;
+}
+
+
+
+
+
+.btnContainer{  
+    display: flex;
+    justify-content: center;
 }
 

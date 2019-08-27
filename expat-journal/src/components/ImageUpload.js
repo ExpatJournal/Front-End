@@ -11,19 +11,16 @@ function ImageUpload ({errors, touched}){
       const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
     
     return(
-        <div>
+        <div className='pageContainer'>
             <div className='pageText'>
                 <h2>Upload an Image</h2>
             </div>
             <section className='centerContainer'>
-            
-                    <div className='dragNDrop' {...getRootProps()}>
-                        <input {...getInputProps()}/>
-                        <img className='uploadIcon' height="150"  src="images/uploadButton.png" alt="This is an Upload Button"></img>
-                    </div>
-
+                <div className='dragNDrop' {...getRootProps()}>
+                    <input {...getInputProps()}/>
+                    <img className='uploadIcon' height="150"  src="images/uploadButton.png" alt="This is an Upload Button"></img>
+                </div>
                 <Form className="sign-up-form">
-
                     <div className="form-group">
                         {touched.caption && errors.caption && <p>{errors.caption}</p>}
                         <label className="caption">Type A Caption</label>
@@ -31,7 +28,9 @@ function ImageUpload ({errors, touched}){
                     </div>
                 </Form>
             </section>
-            <button type="submit" className="btn">Submit</button>
+            <div className="btnContainer">
+                 <button type="submit" className="btn">Submit</button>
+            </div>
         </div>
     );
 };

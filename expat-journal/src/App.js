@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import axios from "axios";
 import "./App.css";
 
 // Contexts
@@ -21,14 +22,22 @@ function App() {
     setUser(DummyData);
   }, []);
 
+  useEffect(() => {
+    axios.get(`https://expatjournal.herokuapp.com/api/posts`).then(res => {
+      console.log("GET all posts res: ", res);
+      setAllPosts(res.data);
+    });
+  }, [user]);
+
   console.log(DummyData);
   // console.log('DummyData', DummyData);
 
   const addPost = post => {
     axiosWithAuth()
-      .post(`******ADD ENPOINT HERE******`, post)
+      .post(`https://expatjournal.herokuapp.com/auth/journal`, post)
       .then(res => {
         console.log("POST res: ", res);
+        setUser([...user, res.data]);
       })
       .catch(err => {
         console.log(err.response);
@@ -38,9 +47,11 @@ function App() {
   const removePost = (id, e) => {
     e.stopPropagation();
     axiosWithAuth()
-      .delete(`******ADD ENPOINT HERE******`)
+      .delete(`https://expatjournal.herokuapp.com/auth/journal/${id}`)
       .then(res => {
         console.log("DELETE res: ", res);
+        const tempPosts = user.filter(post => post.id !== id);
+        setUser(tempPosts);
       })
       .catch(err => {
         console.log(err.response);
@@ -50,18 +61,28 @@ function App() {
   const editPost = (editedPost, e) => {
     e.preventDefault();
     axiosWithAuth()
-      .put(`******ADD ENPOINT HERE******`, editedPost)
+      .put(`https://expatjournal.herokuapp.com/auth/journal/${editedPost.id}`, {
+        title: editedPost.title,
+        location: editPost.location,
+        post: editedPost.post
+      })
       .then(res => {
         console.log("PUT res: ", res);
+        const tempPosts = user.map(post => {
+          if (post.id === res.data.id) {
+            post = res.data;
+          }
+        });
+        setUser(tempPosts);
       })
       .catch(err => {
         console.log(err.response);
       });
   };
 
-  const getUser = id => {
+  const getUser = () => {
     axiosWithAuth()
-      .get(`******ADD ENPOINT HERE******`)
+      .get(`https://expatjournal.herokuapp.com/auth/journal`)
       .then(res => {
         console.log("GET USER res: ", res);
       })

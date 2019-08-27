@@ -25,6 +25,66 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  /* height: 50px; */
+}
+
+.dashboard-header h1 {
+  color: #228b22;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit {
+  background: none;
+  border: none;
+}
+
+.edit:hover {
+  cursor: pointer;
+}
+
+.dashboard h3 {
+  text-align: center;
+  color: #228b22;
+}
+
+.upload {
+  background: #228b22;
+  color: white;
+  border: none;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.upload:hover {
+  cursor: pointer;
+  background: #a7d1a7;
+}
+
+.sign-out {
+  background: none;
+  border: none;
+}
+
+.sign-out:hover {
+  cursor: pointer;
+}
+
+.delete:hover {
+  cursor: pointer;
+  color: gray;
+  border: 1px solid gray;
+}
+
+.delete {
+  background: none;
+  border: 1px solid red;
+  color: red;
+  border-radius: 100%;
+  font-size: 1.3rem;
 }
 
 .action-container {
@@ -155,4 +215,10 @@
   margin: 0 auto;
 
 }
+.photo-comments {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+}
+
 

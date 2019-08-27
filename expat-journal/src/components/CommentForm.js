@@ -13,40 +13,47 @@ const CommentForm = ({errors, touched, values, status}) => {
     }, [status]);
  
  
-     return (
+     return (  
+    
          <div className="comment-form">
+           
            <div className="photo-comments">
-             <div>
+               
+             <div> 
+               <button>Back</button>  
               <FeedCard/>
              </div>
-             <h1 className="ui header"></h1>
-               {users.map(user => (
-                  <div>
-               
-                    <h3>UserName</h3>
-                    <p>Comment: {user.comment}</p>
-                    
-                   
-                  </div>
-             ))}
-             </div>
-             
-            
-            
-         
-             <Form className="ui action input">
+             <Form className="input-comments">
                
                <Field  type="text" component="textarea" name="comment" placeholder="Comment" />
                {touched.name && errors.name && (
                    <p className="error">{errors.name}</p>
                )}
               
-               <button type= "submit"> Submit </button>
+               <button type= "submit"> Post </button>
              
  
              </Form>  
-         </div>
-        
+            </div>
+             <div>
+             <h3 className="Comment-header"> Comments</h3>
+               {users.map(user => (
+                  <div>
+              
+              
+                    <h5>UserName</h5>
+                    <p>Comment: {user.comment}</p>
+                    
+                   
+                  </div>
+             ))}</div>
+             
+              
+            
+          
+         
+            
+        </div>
      )
  }
  

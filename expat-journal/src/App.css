@@ -217,8 +217,20 @@
 }
 .photo-comments {
   display: flex;
-  justify-content: center;
-  justify-content: space-between;
+  flex-direction: column;
+ align-content: center
+  
 }
+
+.input-comments {
+  min-width: 400px;
+  
+}
+
+.comment-form {
+  height: 800px;
+  display: flex;
+}
+
 
 

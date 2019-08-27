@@ -17,15 +17,17 @@ const CommentForm = ({errors, touched, values, status}) => {
     
          <div className="comment-form">
            
-           <div className="photo-comments">
+          
                
-             <div> 
-               <button>Back</button>  
-              <FeedCard/>
-             </div>
-             <Form className="input-comments">
+             
+              
+         <div> 
+            <button>Back</button> 
+        <FeedCard />
+            
+        <Form className="input-comments">
                
-               <Field  type="text" component="textarea" name="comment" placeholder="Comment" />
+        <Field  type="text" component="textarea" name="comment" placeholder="Comment" />
                {touched.name && errors.name && (
                    <p className="error">{errors.name}</p>
                )}
@@ -34,7 +36,8 @@ const CommentForm = ({errors, touched, values, status}) => {
              
  
              </Form>  
-            </div>
+        </div>
+            
              <div>
              <h3 className="Comment-header"> Comments</h3>
                {users.map(user => (

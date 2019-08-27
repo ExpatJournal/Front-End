@@ -85,6 +85,7 @@ function App() {
       .get(`https://expatjournal.herokuapp.com/auth/journal`)
       .then(res => {
         console.log("GET USER res: ", res);
+        setUser(res.data);
       })
       .catch(err => {
         console.log(err.response);

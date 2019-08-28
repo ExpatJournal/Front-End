@@ -14,7 +14,6 @@ const LoggedInNav = (props) => {
     <div className="burger-menu">
       <i className="fas fa-bars " onClick={handleClick}></i>
       <div className="menu-wrapper">
-
         <div className ={menu ? "menu toggled" : "menu"}>
           <p onClick={handleClick}><Link to="/profile"
           style={{ textDecoration: 'none', color: 'white'  }}>

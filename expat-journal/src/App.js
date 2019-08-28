@@ -4,6 +4,7 @@ import ProfilePage from "./components/ProfilePage";
 import Welcome from "./components/Welcome";
 import LogIn from "./components/LogIn";
 import Feed from "./components/Feed";
+import TokenFeed from "./components/TokenFeed";
 import Nav from "./components/Nav";
 import HamburgerNav from "./components/HamburgerNav";
 import EditPost from "./components/EditPost";
@@ -102,15 +103,15 @@ function App() {
   };
 
   return (
-    <Router>
+
       <PostsContext.Provider value={{ allPosts, DummyData }}>
         <UserContext.Provider
           value={{ userPosts, addPost, removePost, editPost }}
         >
           <div className="App">
-            {/* <HamburgerNav /> */}
+
             <Route exact path="/" component={Welcome} />
-            {/* <Route exact path="/posts/:id" component={} /> */}
+
             <Route exact path="/signup" component={SignUp} />
             <Route
               exact
@@ -119,10 +120,17 @@ function App() {
                 return <ProfilePage {...props} value={userPosts} />;
               }}
             />
+            <Route
+              exact
+              path="/my-feed"
+              render={props => {
+                return <TokenFeed {...props} value={userPosts} />;
+              }}
+            />
             <Route exact path="/login" component={LogIn} />
             <Route exact path="/newpost" component={NewPost}/>
             <Route exact path="/feed" render={props => <Feed {...props} />} />
-            {/* <Route exact path="/signup" component={SignUp} /> */}
+
 
             <Route
               path="/edit/:id"
@@ -133,7 +141,7 @@ function App() {
           </div>
         </UserContext.Provider>
       </PostsContext.Provider>
-    </Router>
+    
   );
 }
 

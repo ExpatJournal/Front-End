@@ -10,6 +10,8 @@ import HamburgerNav from "./components/HamburgerNav";
 import EditPost from "./components/EditPost";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
+import FormikImageUpload from "./components/FormikImageUpload";
+import NewPost from "./components/NewPost";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import PrivateRoute from "./components/PrivateRoute";
@@ -126,9 +128,14 @@ function App() {
       >
         <div className="App">
           <Route exact path="/" component={Welcome} />
-
           <Route exact path="/signup" component={SignUp} />
-          <PrivateRoute exact path="/profile" component={ProfilePage} />
+          <Route
+            exact
+            path="/profile"
+            render={props => {
+              return <ProfilePage {...props} value={userPosts} />;
+            }}
+          />
           <Route
             exact
             path="/my-feed"
@@ -136,9 +143,16 @@ function App() {
               return <TokenFeed {...props} value={userPosts} />;
             }}
           />
+          <Route
+            exact
+            path="/new-post"
+            render={props => {
+              return <NewPost {...props} value={userPosts} />;
+            }}
+          />
           <Route exact path="/login" component={FormikLogInForm} />
+          <Route exact path="/newpost" component={FormikImageUpload} />
           <Route exact path="/feed" render={props => <Feed {...props} />} />
-
           <Route
             path="/edit/:id"
             render={props => {

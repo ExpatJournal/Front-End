@@ -26,15 +26,18 @@
     margin: 4rem 4rem;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    height: 1rem;
 }
 
 .form-group{
     margin-top: 3rem;
 }
-
-
-
-
 
 .btnContainer{  
     display: flex;

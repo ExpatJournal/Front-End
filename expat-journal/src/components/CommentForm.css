@@ -1,5 +1,5 @@
 .wrapper {
-    background-color: blue;
+  
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,7 +9,7 @@
 
 
 .Image-container {
-  background-color: red;
+  
   display: flex;
   flex-direction: column;
   max-width: 20rem;
@@ -18,5 +18,22 @@
   position: relative;
 }
 
+.comment-card {
+    height: 20rem;
+    width:20rem;
+overflow: scroll;
+}
 
 
+
+.text-field {
+    min-width: 20rem;
+    max-width: 20rem;
+}
+.photopage-content{
+    display: flex;
+    flex-direction:  row;
+    justify-content: center;
+    align-items: center;
+
+}

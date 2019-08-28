@@ -4,6 +4,7 @@ import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 import FeedCard from './FeedCard';
 import CommentCard from './CommentCard';
+
 import './CommentForm.css';
 const CommentForm = ({errors, touched, values, status}) => {
     const [users, setUsers] = useState([]);
@@ -20,21 +21,18 @@ const CommentForm = ({errors, touched, values, status}) => {
             <div className="wrapper">
                
                  
-                    <div className="Image-container"> 
-                      <FeedCard />
-                      <p>UserName</p>
-                      <p>Iasdjfhajkdlfhadkshfladjkshflajkdhfaklsjdfhldhfjahsdlfj</p>
-                    </div>
+                   
                 
                  <Form className="comment-form">
-          
+                <div className="comment-card">
                  {users.map(user => (
                          
                          <CommentCard username={user.username} comment={user.comment}/>
                          
                              ))} 
+                 </div>
  
-                  <Field  type="text" component="textarea" name="comment" placeholder="Comment" />
+                  <Field  className="text-field" type="text" component="textarea" name="comment" placeholder="Comment" />
                          {touched.name && errors.name && (
                          <p className="error">{errors.name}</p>
                      )}

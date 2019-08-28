@@ -208,6 +208,25 @@
   padding: 0;
 }
 
-.explore-header {
-  text-align: center;
+
+.photo-comments {
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+  
 }
+
+.input-comments {
+  min-width: 400px;
+  max-width:  900px;
+}
+
+.comment-form {
+  display: flex;
+  justify-content: center;
+  height: 800px;
+  display: flex;
+}
+
+
+

@@ -4,6 +4,7 @@ import ProfilePage from "./components/ProfilePage";
 import Welcome from "./components/Welcome";
 import FormikLogInForm from "./components/LogIn";
 import Feed from "./components/Feed";
+import PhotoPage from "./components/PhotoPage"
 import Nav from "./components/Nav";
 import HamburgerNav from "./components/HamburgerNav";
 import EditPost from "./components/EditPost";

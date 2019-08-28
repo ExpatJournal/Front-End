@@ -3,8 +3,11 @@ import axios from "axios";
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 import FeedCard from './FeedCard';
+import CommentCard from './CommentCard';
+import './CommentForm.css';
 const CommentForm = ({errors, touched, values, status}) => {
     const [users, setUsers] = useState([]);
+    console.log("THIS IS THE USERS:" , users);
     console.log('this is touched', touched);
     useEffect(() => {
         if (status) {
@@ -14,49 +17,30 @@ const CommentForm = ({errors, touched, values, status}) => {
  
  
      return (  
-    
-         <div className="comment-form">
-           
+            <div className="wrapper">
+               
+                 
+                    <div className="Image-container"> 
+                      <FeedCard />
+                      <p>UserName</p>
+                      <p>Iasdjfhajkdlfhadkshfladjkshflajkdhfaklsjdfhldhfjahsdlfj</p>
+                    </div>
+                
+                 <Form className="comment-form">
           
-               
-             
-              
-         <div> 
-            <button>Back</button> 
-        <FeedCard />
-            
-        <Form className="input-comments">
-               
-        <Field  type="text" component="textarea" name="comment" placeholder="Comment" />
-               {touched.name && errors.name && (
-                   <p className="error">{errors.name}</p>
-               )}
-              
-               <button type= "submit"> Post </button>
-             
+                 {users.map(user => (
+                         
+                         <CommentCard username={user.username} comment={user.comment}/>
+                         
+                             ))} 
  
-             </Form>  
-        </div>
-            
-             <div>
-             <h3 className="Comment-header"> Comments</h3>
-               {users.map(user => (
-                  <div>
-              
-              
-                    <h5>UserName</h5>
-                    <p>Comment: {user.comment}</p>
-                    
-                   
-                  </div>
-             ))}</div>
-             
-              
-            
-          
-         
-            
-        </div>
+                  <Field  type="text" component="textarea" name="comment" placeholder="Comment" />
+                         {touched.name && errors.name && (
+                         <p className="error">{errors.name}</p>
+                     )}
+                <button type= "submit"> Post </button>
+             </Form> 
+         </div>
      )
  }
  

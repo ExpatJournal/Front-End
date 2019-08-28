@@ -1,6 +1,6 @@
 import React from 'react';
-import CommentForm from '../CommentForm';
-import FeedCard from '../FeedCard';
+import CommentForm from './CommentForm';
+import FeedCard from './FeedCard';
 
 //component import
 // import SideBar from '../HamburgerMenu/HamburgerMenu';

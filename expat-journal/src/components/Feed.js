@@ -16,7 +16,9 @@ const Feed = () => {
       <p>Explore</p>
       <div className="feed-wrapper">
         {DummyData.map(post => (
+          <Link to={`./PhotoPage/${post.id}`} >
           <FeedCard user={post.username} content={post.content} location={post.location} img={post.imgURL} key={post.id} />
+          </Link>
         ) )}
       </div>
     </div>

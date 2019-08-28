@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import CommentForm from './CommentForm';
+import { Link } from "react-router-dom";
 import FeedCard from './FeedCard';
 
 //component import
@@ -31,7 +32,8 @@ export default function PhotoPage(props){
                 <input type='text' name='search' placeholder='search'></input>
                <div className = "photopage-content">
                <div className="Image-container"> 
-                      <FeedCard user={post.username} content={post.post} location={post.location} img={post.media.url} key={post.id}/>
+                     <Link to="../feed"> <button>back</button> </Link>
+                      <FeedCard  /*user={post.username} content={post.post} location={post.location} img={post.media.url} key={post.id} */ />
     
                     </div>
             <CommentForm />

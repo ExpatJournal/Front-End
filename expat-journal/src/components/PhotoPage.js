@@ -33,13 +33,14 @@ export default function PhotoPage(props){
                <div className = "photopage-content">
                <div className="Image-container"> 
                      <Link to="../feed"> <button>back</button> </Link>
-                      <FeedCard  /*user={post.username} content={post.post} location={post.location} img={post.media.url} key={post.id} */ />
+                     
+                      <FeedCard  user={post.username} content={post.post} location={post.location} img={post.media.url} key={post.id}/>
     
                     </div>
             <CommentForm />
             
               </div>
             </section>
-        </div>
+         </div>
     );
 };

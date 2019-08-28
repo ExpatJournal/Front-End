@@ -8,8 +8,7 @@ import CommentCard from './CommentCard';
 import './CommentForm.css';
 const CommentForm = ({errors, touched, values, status}) => {
     const [users, setUsers] = useState([]);
-    console.log("THIS IS THE USERS:" , users);
-    console.log('this is touched', touched);
+    
     useEffect(() => {
         if (status) {
             setUsers([...users, status]);

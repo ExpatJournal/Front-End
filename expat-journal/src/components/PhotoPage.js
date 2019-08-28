@@ -26,21 +26,28 @@ export default function PhotoPage(props){
   }, []);
     
     return(
-        <div>
-            <section>
-         
-                <input type='text' name='search' placeholder='search'></input>
-               <div className = "photopage-content">
-               <div className="Image-container"> 
-                     <Link to="../feed"> <button>back</button> </Link>
-                     
-                      <FeedCard  user={post.username} content={post.post} location={post.location} img={post.media.url} key={post.id}/>
-    
-                    </div>
-            <CommentForm />
-            
+         <div className = "photopage-content">
+         {/* <input type='text' name='search' placeholder='search'></input> */}
+             <div><Link to="../feed"> <button>back</button> </Link></div>
+                 <div className="Image-container"> 
+                    <FeedCard />
+                 </div>
+                    
+                <div className="comment-form-container">
+              <CommentForm />
               </div>
-            </section>
-         </div>
+
+
+               </div>
+                     
+                     
+                     
+    
+                   
+          
+            
+            
+           
+        
     );
 };

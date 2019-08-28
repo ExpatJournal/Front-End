@@ -26,7 +26,7 @@ function App() {
   const [userPosts, setUserPosts] = useState([]);
   const [user, setUser] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
-
+  console.log('Users postsssss', userPosts)
   useEffect(() => {
     setUserPosts(DummyData);
   }, []);

@@ -10,7 +10,6 @@ import HamburgerNav from "./components/HamburgerNav";
 import EditPost from "./components/EditPost";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
-import FormikImageUpload from "./components/FormikImageUpload";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import PrivateRoute from "./components/PrivateRoute";
@@ -138,7 +137,6 @@ function App() {
             }}
           />
           <Route exact path="/login" component={FormikLogInForm} />
-          <Route exact path="/newpost" component={FormikImageUpload} />
           <Route exact path="/feed" render={props => <Feed {...props} />} />
 
           <Route

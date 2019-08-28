@@ -15,9 +15,9 @@ const ProfilePage = props => {
         <div className="action-container">
           <input type="text" name="search" placeholder="Search..." />
           <img src="" alt="user image" />
-          <button className="btn"><Link style={{textDecoration: 'none', color: 'white' }} to="/new-post">
-            Upload
-          </Link></button>
+          <Link style={{textDecoration: 'none', color: 'white' }} to="/new-post">
+            <button className="btn">Upload</button>
+          </Link>
           {/* <button>Sign Out</button> */}
         </div>
       </div>

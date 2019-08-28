@@ -16,10 +16,15 @@ const LoggedInNav = (props) => {
       <div className="menu-wrapper">
 
         <div className ={menu ? "menu toggled" : "menu"}>
-          <p onClick={handleClick}><Link to="/feed"
+          <p onClick={handleClick}><Link to="/profile"
           style={{ textDecoration: 'none', color: 'white'  }}>
-          Explore
+          My Posts
           </Link></p>
+          <p onClick={handleClick}><Link to="/my-feed"
+          style={{ textDecoration: 'none', color: 'white'  }}>
+          Feed
+          </Link>
+          </p>
           <p onClick={handleClick}><Link to="/login"
           style={{ textDecoration: 'none', color: 'white'  }}>
           Log Out

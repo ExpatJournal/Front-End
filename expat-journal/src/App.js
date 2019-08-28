@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
 import ProfilePage from "./components/ProfilePage";
-import PhotoPage from "./components/PhotoPage/PhotoPage";
 import Welcome from "./components/Welcome";
 import FormikLogInForm from "./components/LogIn";
 import Feed from "./components/Feed";
+import TokenFeed from "./components/TokenFeed";
 import Nav from "./components/Nav";
 import HamburgerNav from "./components/HamburgerNav";
 import EditPost from "./components/EditPost";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
+import FormikImageUpload from './components/FormikImageUpload';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
@@ -108,9 +109,9 @@ function App() {
           value={{ userPosts, addPost, removePost, editPost }}
         >
           <div className="App">
-            {/* <HamburgerNav /> */}
+
             <Route exact path="/" component={Welcome} />
-            {/* <Route exact path="/posts/:id" component={} /> */}
+
             <Route exact path="/signup" component={SignUp} />
             <Route
               exact
@@ -119,9 +120,17 @@ function App() {
                 return <ProfilePage {...props} value={userPosts} />;
               }}
             />
+            <Route
+              exact
+              path="/my-feed"
+              render={props => {
+                return <TokenFeed {...props} value={userPosts} />;
+              }}
+            />
             <Route exact path="/login" component={FormikLogInForm} />
+            <Route exact path="/newpost" component={FormikImageUpload}/>
             <Route exact path="/feed" render={props => <Feed {...props} />} />
-            {/* <Route exact path="/signup" component={SignUp} /> */}
+
 
             <Route
               path="/edit/:id"

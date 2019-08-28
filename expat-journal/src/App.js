@@ -103,7 +103,7 @@ function App() {
   };
 
   return (
-    <Router>
+
       <PostsContext.Provider value={{ allPosts, DummyData }}>
         <UserContext.Provider
           value={{ userPosts, addPost, removePost, editPost }}
@@ -141,7 +141,7 @@ function App() {
           </div>
         </UserContext.Provider>
       </PostsContext.Provider>
-    </Router>
+    
   );
 }
 

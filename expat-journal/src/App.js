@@ -10,7 +10,6 @@ import HamburgerNav from "./components/HamburgerNav";
 import EditPost from "./components/EditPost";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
-import FormikImageUpload from "./components/FormikImageUpload";
 import NewPost from "./components/NewPost";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
@@ -66,10 +65,10 @@ function App() {
         axiosWithAuth()
           .post(
             `https://expatjournal.herokuapp.com/auth/journal/${res.data.id}/media`,
-            post.media
+            post.media[0]
           )
           .then(res => {
-            newPost.media = res.data;
+            newPost.media[0] = res.data;
           })
           .catch(err => {
             console.log(err.response);
@@ -151,7 +150,6 @@ function App() {
             }}
           />
           <Route exact path="/login" component={FormikLogInForm} />
-          <Route exact path="/newpost" component={FormikImageUpload} />
           <Route exact path="/feed" render={props => <Feed {...props} />} />
           <Route
             path="/edit/:id"

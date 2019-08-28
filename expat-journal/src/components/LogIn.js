@@ -61,8 +61,7 @@ export default withFormik({
       .post(url, values)
       .then(response => {
         console.log("res", response);
-        localStorage.setItem("token", response.data.token);
-        formikBag.props.history.push("/feed");
+        formikBag.props.history.push("/profile");
       })
       .catch(e => {
         console.log(e.response.data);

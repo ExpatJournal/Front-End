@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
 import ProfilePage from "./components/ProfilePage";
-import PhotoPage from "./components/PhotoPage/PhotoPage";
 import Welcome from "./components/Welcome";
 import FormikLogInForm from "./components/LogIn";
 import Feed from "./components/Feed";
+import TokenFeed from "./components/TokenFeed";
 import Nav from "./components/Nav";
 import HamburgerNav from "./components/HamburgerNav";
 import EditPost from "./components/EditPost";
 import DummyData from "./DummyData";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
+import FormikImageUpload from "./components/FormikImageUpload";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from "axios";
 import PrivateRoute from "./components/PrivateRoute";
@@ -25,7 +26,6 @@ const PostData = DummyData;
 
 function App() {
   const [userPosts, setUserPosts] = useState([]);
-  const [user, setUser] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {
@@ -121,31 +121,35 @@ function App() {
   };
 
   return (
-    <Router>
-      <PostsContext.Provider value={{ allPosts, DummyData }}>
-        <UserContext.Provider
-          value={{ userPosts, addPost, removePost, editPost }}
-        >
-          <div className="App">
-            {/* <HamburgerNav /> */}
-            <Route exact path="/" component={Welcome} />
-            {/* <Route exact path="/posts/:id" component={} /> */}
-            <Route exact path="/signup" component={SignUp} />
-            <PrivateRoute exact path="/profile" component={ProfilePage} />
-            <Route exact path="/login" component={FormikLogInForm} />
-            <Route exact path="/feed" render={props => <Feed {...props} />} />
-            {/* <Route exact path="/signup" component={SignUp} /> */}
+    <PostsContext.Provider value={{ allPosts, DummyData }}>
+      <UserContext.Provider
+        value={{ userPosts, addPost, removePost, editPost }}
+      >
+        <div className="App">
+          <Route exact path="/" component={Welcome} />
 
-            <Route
-              path="/edit/:id"
-              render={props => {
-                return <EditPost {...props} />;
-              }}
-            />
-          </div>
-        </UserContext.Provider>
-      </PostsContext.Provider>
-    </Router>
+          <Route exact path="/signup" component={SignUp} />
+          <PrivateRoute exact path="/profile" component={ProfilePage} />
+          <Route
+            exact
+            path="/my-feed"
+            render={props => {
+              return <TokenFeed {...props} value={userPosts} />;
+            }}
+          />
+          <Route exact path="/login" component={FormikLogInForm} />
+          <Route exact path="/newpost" component={FormikImageUpload} />
+          <Route exact path="/feed" render={props => <Feed {...props} />} />
+
+          <Route
+            path="/edit/:id"
+            render={props => {
+              return <EditPost {...props} />;
+            }}
+          />
+        </div>
+      </UserContext.Provider>
+    </PostsContext.Provider>
   );
 }
 

@@ -211,3 +211,9 @@
 .explore-header {
   text-align: center;
 }
+
+.welcome-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

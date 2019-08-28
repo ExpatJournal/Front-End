@@ -7,6 +7,17 @@ return(
   <div className="welcome-wrapper">
     <HamburgerNav />
       <p>Welcome to Expat Journal!</p>
+      <div className="welcome-btns">
+        <button className="btn"><Link style={{    textDecoration: 'none', color: 'white' }} to="/login">
+          Log In
+        </Link></button>
+        <button className="btn"><Link style={{ textDecoration: 'none', color: 'white' }} to="/signup">
+          Sign Up
+        </Link></button>
+        <button className="btn"><Link style={{ textDecoration: 'none', color: 'white' }} to="/feed">
+          Explore
+        </Link></button>
+      </div>
   </div>
   )
 }

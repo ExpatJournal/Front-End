@@ -1,4 +1,5 @@
 import React from "react";
+import placeholder from "../placeholder.JPG";
 
 const ProfileCard = props => {
   // console.log(user);
@@ -13,7 +14,12 @@ const ProfileCard = props => {
   return (
     <div className="feed-card">
       <div className="feed-img-wrapper">
-        <img src={props.post.media[0].url} />
+        {props.post.media[0] ? (
+          <img src={props.post.media[0].url} />
+        ) : (
+          <img src={placeholder} />
+        )}
+        {/* <img src={props.post.media[0].url} /> */}
       </div>
       {/* <h4>{user}</h4> */}
       <h5>

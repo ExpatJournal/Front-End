@@ -275,3 +275,43 @@
   width: 80px;
   border-radius: 100px;
 }
+
+.edit-container img {
+  max-width: 80%;
+  margin-left: 10%;
+}
+
+.edit-page h3 {
+  display: none;
+}
+
+.edit-page h4 {
+  display: none;
+}
+
+.edit-container textarea {
+  width: 85%;
+  margin-left: 5%;
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.edit-buttons .cancel {
+  display: none;
+}
+
+.edit-buttons .update {
+  width: 100px;
+  margin-left: 180px;
+  margin-top: 40px;
+  height: 30px;
+  border-radius: 40px;
+  border: none;
+  background: #228b22;
+  color: white;
+  margin-bottom: 40px;
+  box-shadow: 0px 5px 5px rgb(167, 167, 167);
+}

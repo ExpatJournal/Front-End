@@ -10,8 +10,9 @@ const PhotoPageCard = ({ user, content, location, img }) => {
         <div className="PhotoPage-img-wrapper">
           <img src={img}/>
         </div>
-        <h4>{user}</h4>
-        <h5>{location} <i className="far fa-compass"></i></h5>
+        <h4>{user}</h4> 
+        <h5>{location}</h5> 
+       
         <p>{content}</p>
       </div>
   

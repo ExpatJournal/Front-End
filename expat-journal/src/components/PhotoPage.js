@@ -45,6 +45,7 @@ export default function PhotoPage(props) {
           </div>
           
             <PhotoPageCard
+
               // user={post.username}
               content={post.post}
               location={post.location}

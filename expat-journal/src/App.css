@@ -275,3 +275,9 @@
   width: 80px;
   border-radius: 100px;
 }
+
+.link-clear {
+  text-decoration: none;
+  color: black;
+  margin: 10px auto;
+}

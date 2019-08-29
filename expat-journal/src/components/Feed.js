@@ -14,7 +14,7 @@ const Feed = () => {
       <p>Explore</p>
       <div className="feed-wrapper">
         {allPosts.map(post => (
-          <Link to={`/PhotoPage/${post.id}`}>
+          <Link className="link-clear" to={`/PhotoPage/${post.id}`}>
             <FeedCard
               // user={post.username}
               content={post.post}

@@ -178,11 +178,13 @@
   max-width: 200px;
   max-height: 220px;
 }
+
 .feed-link {
   border: none;
   outline: none;
   text-decoration: none;
   color: inherit;
+
 }
 
 .post-img-wrapper {
@@ -193,8 +195,11 @@
 .burger-menu {
   text-align: right;
   margin: 10px;
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  float: right;
+  /* display: flex; */
+  /* flex-direction: column; */
+  border: 1px solid black;
 }
 
 .fa-bars {
@@ -209,6 +214,7 @@
 
 .menu-wrapper {
   text-align: center;
+  width: 200px;
 }
 
 .menu {
@@ -236,6 +242,7 @@
 
 .upload-button {
   text-align: center;
+  transform: translate(120px);
 }
 
 .upload-btn {
@@ -253,6 +260,7 @@
   align-items: center;
   margin-top: 10px;
   margin-left: 15px;
+  border: 1px solid black;
 }
 
 .dashboard-header input {
@@ -431,8 +439,10 @@
 }
 @media only screen and (max-width: 750px) {
   .feed-card {
+
     margin: 2rem 1rem;
   }
+
 }
 
 .link-clear {

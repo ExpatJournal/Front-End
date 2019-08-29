@@ -1,5 +1,6 @@
 import React, { useCallback, useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { Link } from 'react-router-dom';
 import "./DragNDrop.css";
 
 export default function ImageUpload() {
@@ -53,7 +54,6 @@ export default function ImageUpload() {
                 src="images/uploadButton.png" 
                 alt="This is an Upload Button"/> 
             <label className='imgLabel'>Image Url
-                Image Url
                 <input
                 className='imgInput'
                 type="text"
@@ -107,10 +107,9 @@ export default function ImageUpload() {
                 </section>
     </section>
       <div className="btnContainer">
-        <button onClick={handleSubmit} type="submit" className="btn">
-          Submit
-        </button>
-      </div>
+        <Link className='cancelbtn' to='/'><p className='cancelBtn'>Cancel</p></Link>
+            <button onClick={handleSubmit} type="cancel" className="btn">Submit</button>
+        </div>
     </div>
   );
 }

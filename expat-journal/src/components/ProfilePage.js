@@ -19,17 +19,20 @@ const ProfilePage = props => {
         console.log(err.response);
       });
   }, []);
+
+  console.log("profile posts: ", userPosts);
   return (
     <div>
       <MobileHeader />
       <div className="upload-button">
         <button className="upload-btn">
-          <Link style={{ textDecoration: "none", color: "white" }}
-            to="/new-post">Upload</Link>
-          </button>
-
-
-
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to="/new-post"
+          >
+            Upload
+          </Link>
+        </button>
       </div>
       <h3>My Posts</h3>
       <div className="post-container">

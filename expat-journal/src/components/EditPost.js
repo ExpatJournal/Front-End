@@ -32,15 +32,20 @@ const EditPost = props => {
     props.history.push("/profile");
   };
 
+  const cancel = () => {
+    props.history.push("/profile");
+  };
+
   console.log("post to edit: ", updatedPost);
 
   return (
     <div className="edit-page">
       <MobileHeader />
-      <h3>Edit Post</h3>
       <div className="edit-container">
         <img src={imgURL} />
         <div className="edit-text">
+          <h3>Edit Post</h3>
+
           <h4>Update Caption</h4>
           <textarea
             type="text"
@@ -50,13 +55,15 @@ const EditPost = props => {
               setUpdatedPost({ ...updatedPost, post: e.target.value })
             }
           />
+          <div className="edit-buttons">
+            <button className="update" onClick={sendUpdate}>
+              Update
+            </button>
+            <button className="cancel" onClick={cancel}>
+              Cancel
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="edit-buttons">
-        <button className="update" onClick={sendUpdate}>
-          Update
-        </button>
-        <button className="cancel">Cancel</button>
       </div>
     </div>
   );

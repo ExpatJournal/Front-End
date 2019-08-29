@@ -325,3 +325,65 @@
   cursor: pointer;
   background: #a7d1a7;
 }
+
+@media (min-width: 501px) {
+  .dashboard-header {
+    display: none;
+  }
+
+  .edit-page h3 {
+    display: block;
+    color: #228b22;
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 1.4rem;
+  }
+
+  .edit-page h4 {
+    display: block;
+  }
+
+  .edit-container img {
+    max-height: 400px;
+    border-radius: 5px;
+  }
+
+  .edit-text textarea {
+    width: 400px;
+    height: 100px;
+    margin: 0;
+  }
+
+  .edit-buttons .cancel {
+    display: inline;
+    margin-left: 100px;
+    background: none;
+    border: none;
+  }
+
+  .edit-buttons .cancel:hover {
+    cursor: pointer;
+  }
+
+  .edit-buttons {
+    margin-top: 60px;
+  }
+
+  .edit-buttons .update {
+    margin: 0;
+    width: 200px;
+  }
+
+  .edit-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 100px;
+  }
+
+  .edit-text {
+    margin-left: 20px;
+  }
+}

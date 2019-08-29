@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { PostsContext } from "../contexts/PostsContext";
 import FeedCard from "./FeedCard";
-import LoggedInNav from "./LoggedInNav";
+import MobileHeader from "./MobileHeader";
+
 
 const TokenFeed = () => {
   const { allPosts } = useContext(PostsContext);
@@ -10,8 +11,8 @@ const TokenFeed = () => {
 
   return (
     <div className="explore-header">
-      <LoggedInNav />
-      <p>My Feed</p>
+      <MobileHeader />
+      {/* <p>My Feed</p> */}
       <div className="feed-wrapper">
         {allPosts.map(post => (
           <FeedCard

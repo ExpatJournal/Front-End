@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 import ProfileCard from "./ProfileCard";
+import MobileHeader from "./MobileHeader";
 import LoggedInNav from "./LoggedInNav";
 import { Link } from "react-router-dom";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
@@ -20,15 +21,7 @@ const ProfilePage = props => {
   }, []);
   return (
     <div>
-      <div className="dashboard">
-      <div className="dashboard-header">
-        {/* <img src="" alt="expat journal logo" /> */}
-        <img src="" alt="user image" />
-        <input type="text" name="search" placeholder="Search..." />
-        {/* <button>Sign Out</button> */}
-      </div>
-    </div>
-    <LoggedInNav />
+      <MobileHeader />
       <div className="upload-button">
         <button className="upload-btn">
           <Link style={{ textDecoration: "none", color: "white" }}

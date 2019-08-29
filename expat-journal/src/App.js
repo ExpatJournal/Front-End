@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import SignUp from "./components/SignUp";
 import ProfilePage from "./components/ProfilePage";
 import Welcome from "./components/Welcome";
-import LogIn from "./components/LogIn";
+import FormikLogInForm from "./components/LogIn";
 import Feed from "./components/Feed";
-import PhotoPage from "./components/PhotoPage"
+import PhotoPage from "./components/PhotoPage";
 import TokenFeed from "./components/TokenFeed";
 import Nav from "./components/Nav";
 import HamburgerNav from "./components/HamburgerNav";
@@ -29,9 +29,6 @@ function App() {
   const [userPosts, setUserPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
   console.log('Users postsssss', userPosts)
-  useEffect(() => {
-    setUserPosts(DummyData);
-  }, []);
 
   useEffect(() => {
     axios.get(`https://expatjournal.herokuapp.com/api/posts`).then(res => {
@@ -127,7 +124,6 @@ function App() {
   };
 
   return (
-
     <PostsContext.Provider value={{ allPosts, userPosts }}>
       <UserContext.Provider
         value={{ userPosts, setUserPosts, addPost, removePost, editPost }}
@@ -157,9 +153,18 @@ function App() {
             }}
           />
 
-            <Route exact path="/login" component={LogIn} />
-            <Route exact path="/newpost" component={NewPost}/>
+          <Route exact path="/login" component={FormikLogInForm} />
             <Route exact path="/feed" render={props => <Feed {...props} />} />
+    <Route
+            exact
+            path="/PhotoPage/:id"
+            render={props => <PhotoPage {...props} />}
+          />
+          <Route
+            exact
+            path="/PhotoPage/:id"
+            render={props => <PhotoPage {...props} />}
+          />
           <Route
             path="/edit/:id"
             render={props => {
@@ -169,7 +174,6 @@ function App() {
         </div>
       </UserContext.Provider>
     </PostsContext.Provider>
-
   );
 }
 

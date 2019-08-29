@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../contexts/UserContext";
 import MobileHeader from "./MobileHeader";
+import DesktopHeader from "./DesktopHeader";
 
 const EditPost = props => {
   console.log("edit props: ", props);
@@ -41,6 +42,7 @@ const EditPost = props => {
   return (
     <div className="edit-page">
       <MobileHeader />
+      <DesktopHeader />
       <div className="edit-container">
         <img src={imgURL} />
         <div className="edit-text">

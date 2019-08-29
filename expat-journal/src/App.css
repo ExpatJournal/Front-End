@@ -96,7 +96,7 @@
 }
 
 .dashboard-header input {
-  background: url("./search.png") top left no-repeat;
+  background: url("./search.png") left no-repeat;
   height: 30px;
   padding-left: 30px;
   width: 500px;
@@ -109,7 +109,7 @@
   flex-direction: column;
   border: 1px solid #a7d1a7;
   border-radius: 10px;
-  margin:  2rem 5rem;
+  margin: 2rem .5rem;
   /* margin-top: 10px; */
   width: 200px;
   padding: 10px;
@@ -178,13 +178,11 @@
   max-width: 200px;
   max-height: 220px;
 }
-.feed-link  {
-
-  border:none;
-  outline:none;
-  text-decoration:none;
-  color:inherit;
-
+.feed-link {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: inherit;
 }
 
 .post-img-wrapper {
@@ -197,9 +195,10 @@
   margin: 10px;
   display: inline-block;
   float: right;
+  z-index: 2;
   /* display: flex; */
   /* flex-direction: column; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .fa-bars {
@@ -215,6 +214,7 @@
 .menu-wrapper {
   text-align: center;
   width: 200px;
+  z-index: 3;
 }
 
 .menu {
@@ -243,6 +243,9 @@
 .upload-button {
   text-align: center;
   transform: translate(120px);
+  z-index: -1;
+  /* border: 1px solid black; */
+  width: 220px;
 }
 
 .upload-btn {
@@ -260,7 +263,8 @@
   align-items: center;
   margin-top: 10px;
   margin-left: 15px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  z-index: 2;
 }
 
 .dashboard-header input {
@@ -276,21 +280,188 @@
   width: 80px;
   border-radius: 100px;
 }
-@media only screen and (max-width: 750px) {
-  .feed-card {
 
-    margin:  2rem 1rem;
+.edit-container img {
+  max-width: 80%;
+  margin-left: 10%;
+}
 
+.edit-page h3 {
+  display: none;
+}
 
+.edit-page h4 {
+  display: none;
+}
+
+.edit-container textarea {
+  width: 85%;
+  margin-left: 5%;
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-top: 50px;
+  padding: 10px;
+  resize: none;
+}
+
+.edit-container textarea:focus {
+  border: 2px solid black;
+}
+
+.edit-buttons .cancel {
+  display: none;
+}
+
+.edit-buttons .update {
+  width: 100px;
+  margin-left: 180px;
+  margin-top: 40px;
+  height: 30px;
+  border-radius: 40px;
+  border: none;
+  background: #228b22;
+  color: white;
+  margin-bottom: 40px;
+  box-shadow: 0px 5px 5px rgb(167, 167, 167);
+}
+
+.edit-buttons .update:hover {
+  cursor: pointer;
+  background: #a7d1a7;
+}
+
+@media (min-width: 501px) {
+  .dashboard-header {
+    display: none;
   }
 
+  .edit-page h3 {
+    display: block;
+    color: #228b22;
+    text-align: center;
+    margin-bottom: 80px;
+    font-size: 1.4rem;
+  }
+
+  .edit-page h4 {
+    display: block;
+  }
+
+  .edit-container img {
+    max-height: 400px;
+    border-radius: 5px;
+  }
+
+  .edit-text textarea {
+    width: 400px;
+    height: 100px;
+    margin: 0;
+  }
+
+  .edit-buttons .cancel {
+    display: inline;
+    margin-left: 100px;
+    background: none;
+    border: none;
+  }
+
+  .edit-buttons .cancel:hover {
+    cursor: pointer;
+  }
+
+  .edit-buttons {
+    margin-top: 60px;
+  }
+
+  .edit-buttons .update {
+    margin: 0;
+    width: 200px;
+  }
+
+  .edit-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 100px;
+  }
+
+  .edit-text {
+    margin-left: 20px;
+  }
+}
+
+.desktop-header {
+  display: none;
+}
+
+@media (min-width: 501px) {
+  .desktop-header {
+    display: block;
+  }
+
+  .desktop-header img {
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    margin-right: 35%;
+    vertical-align: middle;
+  }
+
+  .desktop-header input {
+    background: url("./search.png") left no-repeat;
+    height: 30px;
+    padding-left: 30px;
+    width: 500px;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+
+  .desktop-header .profile-photo {
+    margin-left: 80px;
+    margin-right: 0;
+  }
+
+  .desktop-header .upload {
+    height: 30px;
+    box-shadow: 0px 5px 5px rgb(167, 167, 167);
+    margin-left: 80px;
+  }
+
+  .desktop-header .sign-out {
+    background: none;
+    border: none;
+    margin-left: 80px;
+  }
+
+  .desktop-header .burger-menu {
+    vertical-align: middle;
+    margin-top: 30px;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .feed-card {
+    margin: 2rem 8rem;
+  }
+  .feed-wrapper {
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    width: 100%;
+  }
 }
 
 .link-clear {
   text-decoration: none;
   color: black;
   display: flex;
-  margin: 0 auto;
+  margin: 0;
   flex-direction: row;
   flex-wrap: wrap;
+  /* border: 1px solid black; */
+}
+
+.link-wrapper {
+  border: 1px solid black;
 }

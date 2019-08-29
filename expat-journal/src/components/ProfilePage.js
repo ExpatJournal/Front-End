@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 import ProfileCard from "./ProfileCard";
 import MobileHeader from "./MobileHeader";
+import DesktopHeader from "./DesktopHeader";
 import LoggedInNav from "./LoggedInNav";
 import { Link } from "react-router-dom";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
@@ -19,17 +20,21 @@ const ProfilePage = props => {
         console.log(err.response);
       });
   }, []);
+
+  console.log("profile posts: ", userPosts);
   return (
     <div>
       <MobileHeader />
+      <DesktopHeader />
       <div className="upload-button">
         <button className="upload-btn">
-          <Link style={{ textDecoration: "none", color: "white" }}
-            to="/new-post">Upload</Link>
-          </button>
-
-
-
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to="/new-post"
+          >
+            Upload
+          </Link>
+        </button>
       </div>
       <h3>My Posts</h3>
       <div className="post-container">

@@ -12,7 +12,7 @@ const Feed = () => {
     <div className="explore-header">
       <HamburgerNav />
       <p>Explore</p>
-      <div className="feed-wrapper">
+      <div className="link-wrapper">
         {allPosts.map(post => (
           <Link className="link-clear" to={`/PhotoPage/${post.id}`}>
             <FeedCard

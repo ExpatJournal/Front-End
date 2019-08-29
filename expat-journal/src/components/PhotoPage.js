@@ -34,7 +34,7 @@ export default function PhotoPage(props){
                 <div className = "photopage-content">
                       {/* <input type='text' name='search' placeholder='search'></input> */}
                  <div>
-                      <div><Link to="../feed"> <button className="back-button">back</button> </Link></div>
+                      <div><Link to="../feed"  className="back-button">Back</Link></div>
                          <div className="Image-container"> 
                              <FeedCard user={post.username} content={post.post} location={post.location} img={post.imgURL} key={post.id} />
                          </div>

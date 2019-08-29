@@ -25,7 +25,6 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  /* height: 50px; */
 }
 
 .dashboard-header h1 {
@@ -110,7 +109,6 @@
   border: 1px solid grey;
   border-radius: 10px;
   margin: 10px auto;
-  /* margin-top: 10px; */
   width: 200px;
   padding: 10px;
 }
@@ -135,7 +133,6 @@
 
 .nav {
   display: flex;
-  /* border: 1px solid black; */
   justify-content: space-around;
 }
 
@@ -158,7 +155,6 @@
 .form-group .input {
   padding: 10px;
   border-radius: 10px;
-  /* border: 1px solid black; */
 }
 
 .btn {
@@ -191,7 +187,6 @@
   margin: 10px;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid black; */
 }
 
 .fa-bars {
@@ -205,10 +200,6 @@
 }
 
 .menu-wrapper {
-  /* border: 1px solid black; */
-  /* display: inline-block; */
-  /* width: 200px; */
-  /* position: relative; */
   text-align: center;
 }
 
@@ -236,10 +227,7 @@
 }
 
 .upload-button {
-  /* border: 1px solid black; */
-  /* display: inline-block; */
   text-align: center;
-  /* margin: auto; */
 }
 
 .upload-btn {
@@ -254,8 +242,6 @@
 }
 
 .dashboard-header {
-  /* display: flex; */
-  /* justify-content: space-between; */
   align-items: center;
   margin-top: 10px;
   margin-left: 15px;
@@ -263,7 +249,6 @@
 
 .dashboard-header input {
   max-width: 33%;
-  /* transform: translate(-130px, 0px); */
   margin: auto;
 }
 
@@ -274,4 +259,13 @@
 .profile-photo {
   width: 80px;
   border-radius: 100px;
+}
+
+.link-clear {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

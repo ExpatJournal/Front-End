@@ -297,6 +297,11 @@
   border: 1px solid grey;
   margin-top: 50px;
   padding: 10px;
+  resize: none;
+}
+
+.edit-container textarea:focus {
+  border: 2px solid black;
 }
 
 .edit-buttons .cancel {

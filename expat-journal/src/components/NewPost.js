@@ -32,7 +32,11 @@ export default function ImageUpload() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addPost(newPost);
+    if (newPost.media[0].url === "") {
+      alert("Please add an image URL before submitting.");
+    } else {
+      addPost(newPost);
+    }
     console.log("new post: ", newPost);
   };
 

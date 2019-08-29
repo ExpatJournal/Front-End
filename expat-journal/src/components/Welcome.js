@@ -8,15 +8,15 @@ return(
     <HamburgerNav />
       <p>Welcome to Expat Journal!</p>
       <div className="welcome-btns">
-        <button className="btn"><Link style={{    textDecoration: 'none', color: 'white' }} to="/login">
+        <Link style={{textDecoration: 'none', color: 'white'}} to="/login"><button className="btn">
           Log In
-        </Link></button>
-        <button className="btn"><Link style={{ textDecoration: 'none', color: 'white' }} to="/signup">
+        </button></Link>
+        <Link style={{textDecoration: 'none', color: 'white'}} to="/signup"><button className="btn">
           Sign Up
-        </Link></button>
-        <button className="btn"><Link style={{ textDecoration: 'none', color: 'white' }} to="/feed">
+        </button></Link>
+        <Link style={{ textDecoration: 'none', color: 'white' }} to="/feed"><button className="btn">
           Explore
-        </Link></button>
+        </button></Link>
       </div>
   </div>
   )

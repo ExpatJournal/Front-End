@@ -161,11 +161,6 @@ function App() {
             render={props => <PhotoPage {...props} />}
           />
           <Route
-            exact
-            path="/PhotoPage/:id"
-            render={props => <PhotoPage {...props} />}
-          />
-          <Route
             path="/edit/:id"
             render={props => {
               return <EditPost {...props} />;

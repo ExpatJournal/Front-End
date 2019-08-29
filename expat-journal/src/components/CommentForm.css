@@ -6,7 +6,9 @@
     margin: 10rem 10rem auto;
 }
 
-
+* {
+    font-family: 'Poppins', sans-serif;
+}
 
 .Image-container {
   
@@ -18,19 +20,29 @@
   position: relative;
 }
 
-.comment-card {
+.comment-card-container{
     height: 20rem;
     width:20rem;
-    overflow-y: scroll;
-
+    overflow-y: auto;
+    margin: 0 4rem 3rem 0;
+}
+.comment-card {
+    border-bottom: 1px solid #999999;
 
 }
 
-
-
+.comment-form-container {
+    margin: 0 0 12rem 0;
+}
+.name-field{
+    border-radius: .4rem;
+    font-weight: 300;
+}
 .text-field {
     min-width: 20rem;
     max-width: 20rem;
+    border-radius: .4rem;
+    font-weight: 300;
 }
 
 .post-button-container {
@@ -41,12 +53,18 @@
    margin: .5rem;
 
 }
+.back-button {
+    display: none;
+}
 
 .post-button {
     border-radius: 2.5rem;
-    width: 6rem;
-    color: white;
+    width: 4rem;
+    color: rgba(255, 255, 255, 0.884);
     background-color: #999999;
+    box-shadow: 5px 10px;
+    outline: none;
+    box-shadow: 2px 2px #e0dfdf;
 }
 .photopage-content{
     display: flex;
@@ -56,9 +74,78 @@
     justify-content: space-around;
     margin: 0 15rem;
 }
-.back-button {
-    border-radius: 2.5rem;
-    width: 3rem;
-    color: white;
-    background-color: #999999;
+.PhotoPage-card{
+    display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  /* margin-top: 10px; */
+  width: 400px;
+  padding: 10px;
+}
+.PhotoPage-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .PhotoPage-wrapper img {
+    max-width: 400px;
+    max-height: 420px;
+  }
+  .PhotoPage-card h4 {
+    margin: 5px 0;
+  }
+  .PhotoPage-card h5 {
+    margin: 7px 0;
+    color: darkgray;
+  }
+  .PhotoPage-card p {
+    margin: 7px 0;
+  }
+  .PhotoPage-img-wrapper {
+    margin: auto;
+  }
+  
+  .PhotoPage-img-wrapper img {
+    max-width: 400px;
+    max-height: 420px;
+  }
+  .comment-card p {
+      font-size: .8rem; 
+  }
+  .comment-card h5 {
+      font-size: 1.0rem;
+  }
+
+  
+
+h1, h2 , h3 , h4, h5 {
+    color: #333333;
+}
+@media only screen and (max-width: 600px) {
+       .photopage-content {
+      flex-direction: column;
+      margin: 10rem 0;
+    }
+    .back-button {
+        color: #4ea24e;
+         border: none;
+        outline: none;
+        display: flex;
+        text-decoration: none;
+        
+    }
+    .text-field {
+        min-width: 25rem;
+        max-width: 25rem;
+        
+    }
+    .post-button-container {
+    
+        width: 25rem;
+        display: flex;
+        justify-content: flex-end;
+        margin: .5rem;
+     
+     }
 }

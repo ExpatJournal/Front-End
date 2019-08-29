@@ -123,47 +123,47 @@ function App() {
   };
 
   return (
-    <PostsContext.Provider value={{ allPosts, DummyData }}>
-        <UserContext.Provider
-          value={{ userPosts, addPost, removePost, editPost }}
-        >
-          <div className="App">
-            <Route exact path="/" component={Welcome} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route
-              exact
-              path="/profile"
-              render={props => {
-                return <ProfilePage {...props} value={userPosts} />;
-              }}
-            />
-            <Route
-              exact
-              path="/my-feed"
-              render={props => {
-                return <TokenFeed {...props} value={userPosts} />;
-              }}
-            />
-            <Route
-              exact
-              path="/new-post"
-              render={props => {
-                return <NewPost {...props} value={userPosts} />;
-              }}
-            />
-            <Route exact path="/login" component={FormikLogInForm} />
-            <Route exact path="/feed" render={props => <Feed {...props} />} />
-            <Route exact path="/PhotoPage/:id" render={props => <PhotoPage {...props} />} />
-           
-            <Route
-              path="/edit/:id"
-              render={props => {
-                return <EditPost {...props} />;
-              }}
-            />
-           </div>
-        </UserContext.Provider>
-      </PostsContext.Provider>
+
+    <PostsContext.Provider value={{ allPosts, userPosts }}>
+      <UserContext.Provider
+        value={{ userPosts, setUserPosts, addPost, removePost, editPost }}
+      >
+        <div className="App">
+          <Route exact path="/" component={Welcome} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route
+            exact
+            path="/profile"
+            render={props => {
+              return <ProfilePage {...props} />;
+            }}
+          />
+          <Route
+            exact
+            path="/my-feed"
+            render={props => {
+              return <TokenFeed {...props} />;
+            }}
+          />
+          <Route
+            exact
+            path="/new-post"
+            render={props => {
+              return <NewPost {...props} />;
+            }}
+          />
+          <Route exact path="/login" component={FormikLogInForm} />
+          <Route exact path="/feed" render={props => <Feed {...props} />} />
+          <Route
+            path="/edit/:id"
+            render={props => {
+              return <EditPost {...props} />;
+            }}
+          />
+        </div>
+      </UserContext.Provider>
+    </PostsContext.Provider>
+
   );
 }
 

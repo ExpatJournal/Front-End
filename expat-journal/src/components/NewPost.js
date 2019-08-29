@@ -2,6 +2,7 @@ import React, { useCallback, useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { Link } from 'react-router-dom';
 import "./DragNDrop.css";
+import { Icon } from 'semantic-ui-react'
 
 export default function ImageUpload() {
   const [newPost, setNewPost] = useState({
@@ -16,6 +17,7 @@ export default function ImageUpload() {
     ]
   });
 
+
   const { addPost } = useContext(UserContext);
 
   const changeHandler = e => {
@@ -25,6 +27,7 @@ export default function ImageUpload() {
 
   const handleMediaChange = e => {
     setNewPost({ ...newPost, media: [{ url: e.target.value }] });
+
   };
 
 //   const captionhandleMediaChange = e => {
@@ -43,6 +46,11 @@ export default function ImageUpload() {
 
   return (
     <div className='pageContainer'>
+
+    <div>
+        <Icon name='star outline'/>
+    </div>
+
         <div className='pageText'>
             <h2>Upload an Image</h2>
     </div>
@@ -108,7 +116,12 @@ export default function ImageUpload() {
     </section>
       <div className="btnContainer">
         <Link className='cancelbtn' to='/'><p className='cancelBtn'>Cancel</p></Link>
-            <button onClick={handleSubmit} type="cancel" className="btn">Submit</button>
+            <button 
+            className="btn"
+            onClick={handleSubmit} 
+            type="cancel" 
+            >
+            Submit</button>
         </div>
     </div>
   );

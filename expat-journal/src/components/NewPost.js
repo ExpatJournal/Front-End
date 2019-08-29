@@ -1,50 +1,65 @@
-import React, {useCallback, useContext, useState } from 'react'
-import { UserContext } from '../contexts/UserContext';
-import './DragNDrop.css';
+import React, { useCallback, useContext, useState } from "react";
+import { UserContext } from "../contexts/UserContext";
+import "./DragNDrop.css";
 
-export default function ImageUpload (){
-    const [newPost, setNewPost] = useState({
-        title: "",
-        location: "",
-        post: "",
-        media: [{
-             url: "",
-             caption: "",
-       }]
-    });
-    console.log(newPost.media[2])
-    const { addPost } = useContext(UserContext)
+export default function ImageUpload() {
+  const [newPost, setNewPost] = useState({
+    title: "",
+    location: "",
+    post: "",
+    media: [
+      {
+        url: "",
+        caption: ""
+      }
+    ]
+  });
 
-    const changeHandler = e => {
-        console.log(e.target.value)
-        setNewPost({ ...newPost, [e.target.name]: e.target.value})
-    }
+  const { addPost } = useContext(UserContext);
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        addPost(newPost);
-    }
+  const changeHandler = e => {
+    console.log(e.target.value);
+    setNewPost({ ...newPost, [e.target.name]: e.target.value });
+  };
 
-    return(
-        <div className='pageContainer'>
-            <div className='pageText'>
-                <h2>Upload an Image</h2>
-            </div>
-            <section className='centerContainer'>
-                <div className='dragNDrop'>
-                    <img className='uploadIcon' height="50"  src="images/uploadButton.png" alt="This is an Upload Button"></img>
-                    <label className='imgLabel'>Image Url
-                        <input 
-                            className='imgInput'
-                            type='text' 
-                            placeholder='paste img url here'
-                            name='url'
-                            value={newPost.media[0].url}
-                            onChange={changeHandler}
-                        ></input>
-                    </label>
-                </div>
-                <section className='forms'>
+  const handleMediaChange = e => {
+    setNewPost({ ...newPost, media: [{ url: e.target.value }] });
+  };
+
+//   const captionhandleMediaChange = e => {
+//     setNewPost({ ...newPost, media: [{ caption: e.target.value }] });
+//   };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    addPost(newPost);
+    console.log("new post: ", newPost);
+  };
+
+  return (
+    <div className='pageContainer'>
+        <div className='pageText'>
+            <h2>Upload an Image</h2>
+    </div>
+    <section className='centerContainer'>
+        <div className='dragNDrop'>
+            <img 
+                className='uploadIcon' 
+                height="50"  
+                src="images/uploadButton.png" 
+                alt="This is an Upload Button"/> 
+            <label className='imgLabel'>Image Url
+                Image Url
+                <input
+                className='imgInput'
+                type="text"
+                placeholder="paste img url here"
+                value={newPost.media[0].url}
+                onChange={handleMediaChange}
+                ></input>
+            </label>
+        </div>
+        <section className='forms'>
                         <label className='label'> Photo Title
                             <input 
                                 className="input" 
@@ -55,16 +70,16 @@ export default function ImageUpload (){
                                 onChange={changeHandler}
                             />
                         </label>
-                        <label className='label'>Photo Caption
+                        {/* <label className='label'>Photo Caption
                             <input  
                                 className="input" 
                                 name="caption" 
                                 type="text" 
                                 placeholder="Add A Caption"
                                 value={newPost.media[0].caption}
-                                onChange={changeHandler}
+                                onChange={captionhandleMediaChange}
                             />
-                        </label>
+                        </label> */}
                         <label className='label'> Photo Location
                             <input 
                                 className="input" 
@@ -85,11 +100,13 @@ export default function ImageUpload (){
                                 onChange={changeHandler}
                             />
                         </label>
-                    </section>
-            </section>
-            <div className="btnContainer">
-                 <button onClick={handleSubmit} type="submit" className="btn">Submit</button>
-            </div>
-        </div>
-    );
-};
+                </section>
+    </section>
+      <div className="btnContainer">
+        <button onClick={handleSubmit} type="submit" className="btn">
+          Submit
+        </button>
+      </div>
+    </div>
+  );
+}

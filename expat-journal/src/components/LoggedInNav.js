@@ -21,7 +21,7 @@ const LoggedInNav = (props) => {
           </Link></p>
           <p onClick={handleClick}><Link to="/my-feed"
           style={{ textDecoration: 'none', color: 'white'  }}>
-          Feed
+          My Feed
           </Link>
           </p>
           <p onClick={handleClick}><Link to="/login"

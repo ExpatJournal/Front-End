@@ -193,16 +193,26 @@
 }
 
 .burger-menu {
+  position: relative;
   text-align: right;
   margin: 10px;
   display: flex;
   flex-direction: column;
+  width:20rem;
+ 
+}
+.navigation {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .fa-bars {
   font-size: 36px;
   cursor: pointer;
   color: #4ea24e;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
 .toggled {

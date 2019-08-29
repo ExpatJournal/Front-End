@@ -16,7 +16,7 @@ const TokenFeed = () => {
       <div className="feed-wrapper">
         {allPosts.map(post => (
           <FeedCard
-            // user={post.username}
+            user={post.title}
             content={post.post}
             location={post.location}
             img={post.media[0].url}

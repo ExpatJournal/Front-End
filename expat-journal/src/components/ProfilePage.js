@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import axios from "axios";
 import { UserContext } from "../contexts/UserContext";
 import ProfileCard from "./ProfileCard";
 import LoggedInNav from "./LoggedInNav";
@@ -10,11 +9,9 @@ const ProfilePage = props => {
   const { userPosts, removePost, setUserPosts } = useContext(UserContext);
 
   useEffect(() => {
-    // setUserPosts(DummyData);
     axiosWithAuth()
       .get(`https://expatjournal.herokuapp.com/auth/journal`)
       .then(res => {
-        console.log("login fetch res: ", res);
         setUserPosts(res.data);
       })
       .catch(err => {
@@ -37,7 +34,6 @@ const ProfilePage = props => {
               Upload
             </Link>
           </button>
-          {/* <button>Sign Out</button> */}
         </div>
       </div>
       <h3>My Posts</h3>

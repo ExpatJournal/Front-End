@@ -135,7 +135,7 @@ function App() {
   };
 
   return (
-    <PostsContext.Provider value={{ allPosts, DummyData }}>
+    <PostsContext.Provider value={{ allPosts, userPosts }}>
       <UserContext.Provider
         value={{ userPosts, setUserPosts, addPost, removePost, editPost }}
       >
@@ -146,21 +146,21 @@ function App() {
             exact
             path="/profile"
             render={props => {
-              return <ProfilePage {...props} value={userPosts} />;
+              return <ProfilePage {...props} />;
             }}
           />
           <Route
             exact
             path="/my-feed"
             render={props => {
-              return <TokenFeed {...props} value={userPosts} />;
+              return <TokenFeed {...props} />;
             }}
           />
           <Route
             exact
             path="/new-post"
             render={props => {
-              return <NewPost {...props} value={userPosts} />;
+              return <NewPost {...props} />;
             }}
           />
           <Route exact path="/login" component={FormikLogInForm} />

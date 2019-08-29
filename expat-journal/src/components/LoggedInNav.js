@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const LoggedInNav = (props) => {
 
-  const [menu, setMenu] = useState(false)
+  const [menu, setMenu] = useState(true)
   const handleClick = () => {
     setMenu(!menu);
     console.log('clicked');

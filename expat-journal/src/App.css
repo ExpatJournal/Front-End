@@ -180,6 +180,14 @@
   max-width: 200px;
   max-height: 220px;
 }
+.feed-link  {
+  
+  border:none;
+  outline:none;
+  text-decoration:none;
+  color:inherit;
+  
+}
 
 .post-img-wrapper {
   margin: auto;
@@ -254,16 +262,24 @@
 }
 
 .dashboard-header {
-  display: flex;
-  justify-content: space-evenly;
+  /* display: flex; */
+  /* justify-content: space-between; */
   align-items: center;
   margin-top: 10px;
+  margin-left: 15px;
 }
 
 .dashboard-header input {
   max-width: 33%;
+  /* transform: translate(-130px, 0px); */
+  margin: auto;
 }
 
 .li {
-  transform: translate(0px, -45px);
+  transform: translate(0px, -75px);
+}
+
+.profile-photo {
+  width: 80px;
+  border-radius: 100px;
 }

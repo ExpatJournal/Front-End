@@ -315,3 +315,8 @@
   margin-bottom: 40px;
   box-shadow: 0px 5px 5px rgb(167, 167, 167);
 }
+
+.edit-buttons .update:hover {
+  cursor: pointer;
+  background: #a7d1a7;
+}

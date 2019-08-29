@@ -29,7 +29,7 @@ const EditPost = props => {
   const sendUpdate = e => {
     e.preventDefault();
     editPost(updatedPost);
-    // props.history.push("/profile");
+    props.history.push("/profile");
   };
 
   console.log("post to edit: ", updatedPost);

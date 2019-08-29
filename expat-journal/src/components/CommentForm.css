@@ -34,7 +34,10 @@
 .comment-form-container {
     margin: 0 0 12rem 0;
 }
-
+.name-field{
+    border-radius: .4rem;
+    font-weight: 300;
+}
 .text-field {
     min-width: 20rem;
     max-width: 20rem;
@@ -113,6 +116,8 @@
   .comment-card h5 {
       font-size: 1.0rem;
   }
+
+  
 
 h1, h2 , h3 , h4, h5 {
     color: #333333;

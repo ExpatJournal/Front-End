@@ -24,7 +24,7 @@ const CommentForm = ({errors, touched, values, status}) => {
                <div className="comment-card-container"> 
                    {users.map(user => (
                           
-                         <CommentCard username={user.username} comment={user.comment}/>
+                         <CommentCard name={user.name} comment={user.comment}/>
                          
                             ))} 
                    
@@ -34,7 +34,11 @@ const CommentForm = ({errors, touched, values, status}) => {
                  <Form className="comment-form">
               
                      <h5>Type a Comment</h5>
-                  <Field  className="text-field" type="text" component="textarea" name="comment" placeholder="Type Here..." />
+                     <Field  className="name-field" type="text" name="name" placeholder="Your Name..." />
+                         {touched.name && errors.name && (
+                         <p className="error">{errors.name}</p>
+                     )} 
+                  <Field  className="text-field" type="text" component="textarea" name="comment" placeholder="Type Your Comment Here..." />
                          {touched.name && errors.name && (
                          <p className="error">{errors.name}</p>
                      )}
@@ -46,15 +50,16 @@ const CommentForm = ({errors, touched, values, status}) => {
  }
  
  const FormikComment = withFormik ({
-     mapPropsToValues ({ comment,}) {
+     mapPropsToValues ({ name, comment}) {
          return {
-            
+              name: name || "",
              comment: comment ||"",
             
          }
      },
  
      validationSchema: Yup.object().shape({
+         name:Yup.string().required(<p>Please use your real name!</p>).min(3).max(25),
          comment: Yup.string().required(<p>Please leave your comment!</p>).min(3).max(50),
  
      }),

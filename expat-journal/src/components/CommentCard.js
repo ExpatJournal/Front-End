@@ -4,7 +4,7 @@ const CommentCard = props => {
     
     return (
         <div className="comment-card">
-        <h5> Username {props.username}</h5>
+        <h5> {props.name} </h5>
         <p> {props.comment}</p>
 </div>
     );

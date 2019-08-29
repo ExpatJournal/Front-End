@@ -176,6 +176,11 @@
   margin: auto;
 }
 
+.feed-img-wrapper img {
+  max-width: 200px;
+  max-height: 220px;
+}
+
 .post-img-wrapper {
   margin: auto;
   width: 150px;
@@ -241,7 +246,7 @@
   margin: 10px;
   padding: 10px;
   border-radius: 15px;
-  background-color: #1919FF;
+  background-color: #1919ff;
   border: 1px solid #19a0fa;
   color: white;
   width: 190px;

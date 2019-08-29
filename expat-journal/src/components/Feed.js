@@ -1,9 +1,8 @@
-
 import React, { useContext } from "react";
 import { PostsContext } from "../contexts/PostsContext";
 import FeedCard from "./FeedCard";
 import HamburgerNav from "./HamburgerNav";
-
+import { Link } from "react-router-dom";
 
 const Feed = () => {
   const { allPosts } = useContext(PostsContext);
@@ -14,17 +13,17 @@ const Feed = () => {
       <HamburgerNav />
       <p>Explore</p>
       <div className="feed-wrapper">
-
         {allPosts.map(post => (
-          <FeedCard
-            // user={post.username}
-            content={post.content}
-            location={post.location}
-            img={post.media[0].url}
-            key={post.id}
-          />
+          <Link to={`/PhotoPage/${post.id}`}>
+            <FeedCard
+              // user={post.username}
+              content={post.post}
+              location={post.location}
+              img={post.media[0].url}
+              key={post.id}
+            />
+          </Link>
         ))}
-
       </div>
     </div>
   );

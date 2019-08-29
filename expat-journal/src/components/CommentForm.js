@@ -18,14 +18,17 @@ const CommentForm = ({errors, touched, values, status}) => {
  
      return (  
             <div className="wrapper">
+                 <h3>Comments</h3>
                <div className="comment-card-container"> 
                    {users.map(user => (
-                         
+                          
                          <CommentCard username={user.username} comment={user.comment}/>
                          
                             ))} 
                    
                 </div>
+                <br></br>
+                <br></br>
                  <Form className="comment-form">
               
                      <h5>Type a Comment</h5>

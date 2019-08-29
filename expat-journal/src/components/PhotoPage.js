@@ -4,6 +4,7 @@ import CommentForm from "./CommentForm";
 import { Link } from "react-router-dom";
 import FeedCard from "./FeedCard";
 import HamburgerNav from "./HamburgerNav";
+import PhotoPageCard from "./PhotoPageCard";
 //component import
 // import SideBar from '../HamburgerMenu/HamburgerMenu';
 
@@ -41,15 +42,15 @@ export default function PhotoPage(props) {
              Back{" "}
             </Link>
           </div>
-          <div className="Image-container">
-            <FeedCard
+          
+            <PhotoPageCard
               // user={post.username}
               content={post.post}
               location={post.location}
               img={imgURL}
               key={post.id}
             />
-          </div>
+          
         </div>
         <div className="comment-form-container">
           <CommentForm />

@@ -24,14 +24,16 @@
     height: 20rem;
     width:20rem;
     overflow-y: auto;
-
+    margin: 0 4rem 3rem 0;
 }
 .comment-card {
     border-bottom: 1px solid #999999;
 
 }
 
-
+.comment-form-container {
+    margin: 0 0 12rem 0;
+}
 
 .text-field {
     min-width: 20rem;
@@ -54,12 +56,12 @@
 
 .post-button {
     border-radius: 2.5rem;
-    width: 6rem;
-    color: white;
+    width: 4rem;
+    color: rgba(255, 255, 255, 0.884);
     background-color: #999999;
     box-shadow: 5px 10px;
     outline: none;
-    box-shadow: 5px 1px #e0dfdf;
+    box-shadow: 2px 2px #e0dfdf;
 }
 .photopage-content{
     display: flex;
@@ -105,6 +107,12 @@
     max-width: 400px;
     max-height: 420px;
   }
+  .comment-card p {
+      font-size: .8rem; 
+  }
+  .comment-card h5 {
+      font-size: 1.0rem;
+  }
 
 h1, h2 , h3 , h4, h5 {
     color: #333333;
@@ -123,8 +131,8 @@ h1, h2 , h3 , h4, h5 {
         
     }
     .text-field {
-        min-width: 30rem;
-        max-width: 30rem;
+        min-width: 25rem;
+        max-width: 25rem;
         
     }
 }

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import FeedCard from "./FeedCard";
 import HamburgerNav from "./HamburgerNav";
 import PhotoPageCard from "./PhotoPageCard";
+
 //component import
 // import SideBar from '../HamburgerMenu/HamburgerMenu';
 

@@ -19,22 +19,24 @@ const ProfilePage = props => {
       });
   }, []);
   return (
-    <div className="dashboard">
-      <LoggedInNav />
+    <div>
+      <div className="dashboard">
       <div className="dashboard-header">
-        <img src="" alt="expat journal logo" />
-        <div className="action-container">
-          <input type="text" name="search" placeholder="Search..." />
-          <img src="" alt="user image" />
-          <button className="btn">
-            <Link
-              style={{ textDecoration: "none", color: "white" }}
-              to="/new-post"
-            >
-              Upload
-            </Link>
+        {/* <img src="" alt="expat journal logo" /> */}
+        <img src="" alt="user image" />
+        <input type="text" name="search" placeholder="Search..." />
+        {/* <button>Sign Out</button> */}
+      </div>
+    </div>
+    <LoggedInNav />
+      <div className="upload-button">
+        <button className="upload-btn">
+          <Link style={{ textDecoration: "none", color: "white" }}
+            to="/new-post">Upload</Link>
           </button>
-        </div>
+
+
+
       </div>
       <h3>My Posts</h3>
       <div className="post-container">

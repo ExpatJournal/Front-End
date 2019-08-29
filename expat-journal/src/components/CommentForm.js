@@ -24,19 +24,21 @@ const CommentForm = ({errors, touched, values, status}) => {
                 
                  <Form className="comment-form">
                 <div className="comment-card">
+
                  {users.map(user => (
                          
                          <CommentCard username={user.username} comment={user.comment}/>
                          
-                             ))} 
+                            ))} 
                  </div>
  
                   <Field  className="text-field" type="text" component="textarea" name="comment" placeholder="Comment" />
                          {touched.name && errors.name && (
                          <p className="error">{errors.name}</p>
                      )}
-                <button type= "submit"> Post </button>
+               <div className="post-button-container"> <button className="post-button"type= "submit"> Post </button></div>
              </Form> 
+             
          </div>
      )
  }

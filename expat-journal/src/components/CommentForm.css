@@ -1,7 +1,7 @@
 .wrapper {
   
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     margin: 10rem 10rem auto;
 }
@@ -21,7 +21,8 @@
 .comment-card {
     height: 20rem;
     width:20rem;
-overflow: scroll;
+    overflow-y: scroll;
+
 
 }
 
@@ -31,6 +32,22 @@ overflow: scroll;
     min-width: 20rem;
     max-width: 20rem;
 }
+
+.post-button-container {
+    
+   width: 20rem;
+   display: flex;
+   justify-content: flex-end;
+   margin: .5rem;
+
+}
+
+.post-button {
+    border-radius: 2.5rem;
+    width: 6rem;
+    color: white;
+    background-color: #999999;
+}
 .photopage-content{
     display: flex;
     flex-direction:  row;
@@ -38,4 +55,10 @@ overflow: scroll;
     align-items: center;
     justify-content: space-around;
     margin: 0 15rem;
+}
+.back-button {
+    border-radius: 2.5rem;
+    width: 3rem;
+    color: white;
+    background-color: #999999;
 }

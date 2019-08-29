@@ -3,7 +3,7 @@ import axios from "axios";
 import * as Yup from "yup";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { withFormik, Form, Field } from "formik";
-import HamburgerNav from './HamburgerNav'
+import HamburgerNav from "./HamburgerNav";
 
 const SignUp = ({ values, handleChange, errors, touched, status }) => {
   return (
@@ -107,8 +107,8 @@ export default withFormik({
         password: values.password
       })
       .then(response => {
-        console.log("res", response);
-        formikBag.props.history.push("/profile");
+        console.log("register res", response);
+        formikBag.props.history.push("/login");
       })
       .catch(e => {
         console.log(e.response.data);

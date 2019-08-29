@@ -28,18 +28,18 @@ function App() {
   const [userPosts, setUserPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
 
-  useEffect(() => {
-    // setUserPosts(DummyData);
-    axiosWithAuth()
-      .get(`https://expatjournal.herokuapp.com/auth/journal`)
-      .then(res => {
-        console.log("login fetch res: ", res);
-        setUserPosts(res.data);
-      })
-      .catch(err => {
-        console.log(err.response);
-      });
-  }, []);
+  // useEffect(() => {
+  //   // setUserPosts(DummyData);
+  //   axiosWithAuth()
+  //     .get(`https://expatjournal.herokuapp.com/auth/journal`)
+  //     .then(res => {
+  //       console.log("login fetch res: ", res);
+  //       setUserPosts(res.data);
+  //     })
+  //     .catch(err => {
+  //       console.log(err.response);
+  //     });
+  // }, []);
 
   useEffect(() => {
     axios.get(`https://expatjournal.herokuapp.com/api/posts`).then(res => {
@@ -137,7 +137,7 @@ function App() {
   return (
     <PostsContext.Provider value={{ allPosts, DummyData }}>
       <UserContext.Provider
-        value={{ userPosts, addPost, removePost, editPost }}
+        value={{ userPosts, setUserPosts, addPost, removePost, editPost }}
       >
         <div className="App">
           <Route exact path="/" component={Welcome} />

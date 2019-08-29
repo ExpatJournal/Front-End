@@ -1,12 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import { UserContext } from "../contexts/UserContext";
 import ProfileCard from "./ProfileCard";
 import LoggedInNav from "./LoggedInNav";
 import { Link } from "react-router-dom";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const ProfilePage = props => {
-  const { userPosts, removePost } = useContext(UserContext);
+  const { userPosts, removePost, setUserPosts } = useContext(UserContext);
+
+  useEffect(() => {
+    // setUserPosts(DummyData);
+    axiosWithAuth()
+      .get(`https://expatjournal.herokuapp.com/auth/journal`)
+      .then(res => {
+        console.log("login fetch res: ", res);
+        setUserPosts(res.data);
+      })
+      .catch(err => {
+        console.log(err.response);
+      });
+  }, []);
   return (
     <div className="dashboard">
       <LoggedInNav />

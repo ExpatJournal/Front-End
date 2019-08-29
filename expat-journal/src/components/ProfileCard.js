@@ -6,7 +6,7 @@ const ProfileCard = props => {
     props.history.push(`/edit/${props.post.id}`);
   };
   console.log("profile card props: ", props);
-  console.log("profile card url", props.post.media[0].url);
+  // console.log("profile card url", props.post.media[0].url);
 
   const deletePost = () => {};
 

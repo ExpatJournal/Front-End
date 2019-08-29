@@ -38,9 +38,11 @@ const CommentForm = ({errors, touched, values, status}) => {
                          {touched.name && errors.name && (
                          <p className="error">{errors.name}</p>
                      )} 
+                     <br></br>
+                     <br></br>
                   <Field  className="text-field" type="text" component="textarea" name="comment" placeholder="Type Your Comment Here..." />
-                         {touched.name && errors.name && (
-                         <p className="error">{errors.name}</p>
+                         {touched.comment && errors.comment && (
+                         <p className="error">{errors.comment}</p>
                      )}
                <div className="post-button-container"> <button className="post-button"type= "submit"> Post </button></div>
              </Form> 

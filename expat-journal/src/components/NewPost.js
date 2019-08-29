@@ -29,7 +29,7 @@ export default function ImageUpload() {
   const handleSubmit = e => {
     e.preventDefault();
     addPost(newPost);
-    // console.log("new post: ", newPost);
+    console.log("new post: ", newPost);
   };
 
   return (

@@ -52,7 +52,16 @@ function App() {
   // console.log('DummyData', DummyData);
 
   const addPost = post => {
-    let newPost = post;
+    // let newPost = post;
+    let newPost = {
+      id: "",
+      title: post.title,
+      author_id: "",
+      location: post.location,
+      post: post.post,
+      created_date: "",
+      media: [{ url: post.media[0].url }]
+    };
     const postText = {
       title: newPost.title,
       location: newPost.location,
@@ -62,18 +71,23 @@ function App() {
       .post(`https://expatjournal.herokuapp.com/auth/journal`, postText)
       .then(res => {
         console.log("POST res: ", res);
+        newPost.id = res.data.id;
+        newPost.author_id = res.data.author_id;
+        newPost.created_date = res.data.created_date;
         axiosWithAuth()
           .post(
             `https://expatjournal.herokuapp.com/auth/journal/${res.data.id}/media`,
             post.media[0]
           )
           .then(res => {
+            console.log("media POST res: ", res);
             newPost.media[0] = res.data;
           })
           .catch(err => {
             console.log(err.response);
           });
         setUserPosts([...userPosts, newPost]);
+        console.log("final new post: ", newPost);
       })
       .catch(err => {
         console.log(err.response);

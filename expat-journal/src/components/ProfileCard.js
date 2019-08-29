@@ -6,13 +6,14 @@ const ProfileCard = props => {
     props.history.push(`/edit/${props.post.id}`);
   };
   console.log("profile card props: ", props);
+  console.log("profile card url", props.post.media[0].url);
 
   const deletePost = () => {};
 
   return (
     <div className="feed-card">
       <div className="feed-img-wrapper">
-        <img src={props.post.imgURL} />
+        <img src={props.post.media[0].url} />
       </div>
       {/* <h4>{user}</h4> */}
       <h5>

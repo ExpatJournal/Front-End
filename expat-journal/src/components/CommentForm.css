@@ -135,4 +135,12 @@ h1, h2 , h3 , h4, h5 {
         max-width: 25rem;
         
     }
+    .post-button-container {
+    
+        width: 25rem;
+        display: flex;
+        justify-content: flex-end;
+        margin: .5rem;
+     
+     }
 }

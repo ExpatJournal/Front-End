@@ -111,7 +111,7 @@
   border-radius: 10px;
   margin: 10px auto;
   /* margin-top: 10px; */
-  max-width: 200px;
+  width: 200px;
   padding: 10px;
 }
 
@@ -176,6 +176,11 @@
   margin: auto;
 }
 
+.post-img-wrapper {
+  margin: auto;
+  width: 150px;
+}
+
 .burger-menu {
   text-align: right;
   margin: 10px;
@@ -216,4 +221,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 15px 0 15px;
 }

@@ -8,7 +8,7 @@ const ProfileCard = props => {
 
   return (
     <div className="feed-card">
-      <div className="feed-img-wrapper">
+      <div className="post-img-wrapper">
         <img src={props.post.imgURL} />
       </div>
       <div className="button-container">

@@ -11,6 +11,7 @@ const HamburgerNav = (props) => {
   }
 
   return(
+    <div className="navigation">
     <div className="burger-menu">
       <i className="fas fa-bars " onClick={handleClick}></i>
       <div className="menu-wrapper">
@@ -30,6 +31,7 @@ const HamburgerNav = (props) => {
           </p>
         </div>
       </div>
+    </div>
     </div>
   )
 }

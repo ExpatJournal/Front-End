@@ -4,6 +4,7 @@ import ProfilePage from "./components/ProfilePage";
 import Welcome from "./components/Welcome";
 import FormikLogInForm from "./components/LogIn";
 import Feed from "./components/Feed";
+import PhotoPage from "./components/PhotoPage"
 import TokenFeed from "./components/TokenFeed";
 import Nav from "./components/Nav";
 import HamburgerNav from "./components/HamburgerNav";
@@ -27,19 +28,6 @@ const PostData = DummyData;
 function App() {
   const [userPosts, setUserPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
-
-  // useEffect(() => {
-  //   // setUserPosts(DummyData);
-  //   axiosWithAuth()
-  //     .get(`https://expatjournal.herokuapp.com/auth/journal`)
-  //     .then(res => {
-  //       console.log("login fetch res: ", res);
-  //       setUserPosts(res.data);
-  //     })
-  //     .catch(err => {
-  //       console.log(err.response);
-  //     });
-  // }, []);
 
   useEffect(() => {
     axios.get(`https://expatjournal.herokuapp.com/api/posts`).then(res => {
@@ -135,7 +123,8 @@ function App() {
   };
 
   return (
-    <PostsContext.Provider value={{ allPosts, DummyData }}>
+
+    <PostsContext.Provider value={{ allPosts, userPosts }}>
       <UserContext.Provider
         value={{ userPosts, setUserPosts, addPost, removePost, editPost }}
       >
@@ -146,21 +135,21 @@ function App() {
             exact
             path="/profile"
             render={props => {
-              return <ProfilePage {...props} value={userPosts} />;
+              return <ProfilePage {...props} />;
             }}
           />
           <Route
             exact
             path="/my-feed"
             render={props => {
-              return <TokenFeed {...props} value={userPosts} />;
+              return <TokenFeed {...props} />;
             }}
           />
           <Route
             exact
             path="/new-post"
             render={props => {
-              return <NewPost {...props} value={userPosts} />;
+              return <NewPost {...props} />;
             }}
           />
           <Route exact path="/login" component={FormikLogInForm} />
@@ -174,6 +163,7 @@ function App() {
         </div>
       </UserContext.Provider>
     </PostsContext.Provider>
+
   );
 }
 

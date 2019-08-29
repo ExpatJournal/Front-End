@@ -4,6 +4,8 @@ import CommentForm from "./CommentForm";
 import { Link } from "react-router-dom";
 import FeedCard from "./FeedCard";
 import HamburgerNav from "./HamburgerNav";
+import PhotoPageCard from "./PhotoPageCard";
+
 //component import
 // import SideBar from '../HamburgerMenu/HamburgerMenu';
 
@@ -12,7 +14,7 @@ export default function PhotoPage(props) {
   const [post, setPost] = useState([]);
   const [imgURL, setImgURL] = useState("");
   useEffect(() => {
-    const id = props.match.params.id;
+    const id = props.match.params.id
 
     axios
       .get(`https://expatjournal.herokuapp.com/api/posts/${id}`)
@@ -36,20 +38,21 @@ export default function PhotoPage(props) {
         {/* <input type='text' name='search' placeholder='search'></input> */}
         <div>
           <div>
-            <Link to="../feed">
+            <Link className="back-button" to="../feed">
               {" "}
-              <button className="back-button">back</button>{" "}
+             Back{" "}
             </Link>
           </div>
-          <div className="Image-container">
-            <FeedCard
+          
+            <PhotoPageCard
+
               // user={post.username}
               content={post.post}
               location={post.location}
               img={imgURL}
               key={post.id}
             />
-          </div>
+          
         </div>
         <div className="comment-form-container">
           <CommentForm />

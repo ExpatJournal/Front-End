@@ -9,7 +9,7 @@ function ImageUpload ({errors, touched}){
         // Do something with the files
       }, [])
       const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
-    
+
     return(
         <div className='pageContainer'>
             <div className='pageText'>

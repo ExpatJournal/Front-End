@@ -54,7 +54,7 @@ export default withFormik({
     .post(url, values)
     .then(response => {
       console.log("res", response);
-      formikBag.props.history.push("/feed");
+      formikBag.props.history.push("/profile");
     })
     .catch(e => {
       console.log(e.response.data);

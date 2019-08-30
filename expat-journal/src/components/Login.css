@@ -1,0 +1,26 @@
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+.wb{
+    color: #389738;
+    display: flex;
+    justify-content: center;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: row;
+    padding-left: 2rem;
+}
+
+.login-wrapper{
+    display: flex;
+    justify-content: center;
+}

@@ -4,14 +4,18 @@ import * as Yup from "yup";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { withFormik, Form, Field } from "formik";
 import HamburgerNav from "./HamburgerNav";
+import './Login.css';
 
 const LogIn = ({ values, handleChange, errors, touched, status }) => {
   return (
     <div>
       <HamburgerNav />
-      <div className="signup-wrapper">
-        <h4>Log In</h4>
-        <Form className="sign-up-form">
+      <div>
+        <h1 className='wb'>Welcome Back!</h1>
+        <h4 className='login'>Log In</h4>
+      </div>
+      <div className="login-wrapper">
+        <Form className="log-in-form">
           <div className="form-group">
             {touched.username && errors.username && <p>{errors.username}</p>}
             <label className="label">Username</label>
@@ -34,9 +38,10 @@ const LogIn = ({ values, handleChange, errors, touched, status }) => {
             />
           </div>
 
-          <button type="submit" className="btn">
-            Submit &rarr;
-          </button>
+            <button type="submit" className="btn">
+              Submit &rarr;
+            </button>
+
         </Form>
       </div>
     </div>

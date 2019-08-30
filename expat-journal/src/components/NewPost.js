@@ -1,6 +1,8 @@
 import React, { useCallback, useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
-import "./DragNDrop.css";
+import { Link } from 'react-router-dom';
+import "./NewPost.css";
+import { Icon } from 'semantic-ui-react'
 
 export default function ImageUpload() {
   const [newPost, setNewPost] = useState({
@@ -15,6 +17,7 @@ export default function ImageUpload() {
     ]
   });
 
+
   const { addPost } = useContext(UserContext);
 
   const changeHandler = e => {
@@ -24,6 +27,7 @@ export default function ImageUpload() {
 
   const handleMediaChange = e => {
     setNewPost({ ...newPost, media: [{ url: e.target.value }] });
+
   };
 
 //   const captionhandleMediaChange = e => {
@@ -42,7 +46,11 @@ export default function ImageUpload() {
 
   return (
     <div className='pageContainer'>
+
         <div className='pageText'>
+            <div className='btncontainer'>
+               <Link to='/profile'><button className='backbtn'>Back</button></Link>
+            </div>
             <h2>Upload an Image</h2>
     </div>
     <section className='centerContainer'>
@@ -53,7 +61,6 @@ export default function ImageUpload() {
                 src="images/uploadButton.png" 
                 alt="This is an Upload Button"/> 
             <label className='imgLabel'>Image Url
-                Image Url
                 <input
                 className='imgInput'
                 type="text"
@@ -107,10 +114,14 @@ export default function ImageUpload() {
                 </section>
     </section>
       <div className="btnContainer">
-        <button onClick={handleSubmit} type="submit" className="btn">
-          Submit
-        </button>
-      </div>
+        <Link className='cancelbtn' to='/profile'><p className='cancelBtn'>Cancel</p></Link>
+            <button 
+            className="btn"
+            onClick={handleSubmit} 
+            type="cancel" 
+            >
+            Submit</button>
+        </div>
     </div>
   );
 }

@@ -1,3 +1,21 @@
+* {
+    font-family: 'Poppins, sans-serif;'
+}
+
+.btncontainer{
+    margin-right: 17rem;
+}
+
+.backbtn{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    height: 2rem;
+    width: 3rem;
+    border-radius: 20px;
+    background-color: #D6D6D6;
+}
+
 .pageContainer{
     height: 40rem;
 }
@@ -25,6 +43,7 @@
 .imgInput{
     width: 10rem;;
     border-radius: 25px;
+    margin-bottom: 1rem;
 }
 
 .dragNDrop{
@@ -62,14 +81,43 @@
 
 }
 
-.l
 
 .form-group{
     margin-top: 3rem;
 }
 
+.cancelbtn{
+    display: none;
+}
+
 .btnContainer{  
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (max-width: 600px){
+
+    .btncontainer{
+        margin-right: 5rem;
+    }
+
+    .centerContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .forms{
+        padding-top: 0rem;
+    }
+
+    .cancelbtn {
+        display: flex;
+        margin-right: 4rem;
+        text-decoration: none;
+        color: black;
+    }
+
 }
 

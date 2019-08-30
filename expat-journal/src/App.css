@@ -265,6 +265,10 @@
   cursor: pointer;
 }
 
+.headertxt{
+  margin-left: 5rem;
+}
+
 .dashboard-header {
   align-items: center;
   margin-top: 10px;

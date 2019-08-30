@@ -3,7 +3,7 @@ import { UserContext } from "../contexts/UserContext";
 import "./DragNDrop.css";
 import DesktopHeader from "./DesktopHeader";
 
-export default function ImageUpload() {
+export default function ImageUpload(props) {
   const [newPost, setNewPost] = useState({
     title: "",
     location: "",
@@ -23,6 +23,14 @@ export default function ImageUpload() {
   const changeHandler = e => {
     console.log(e.target.value);
     setNewPost({ ...newPost, [e.target.name]: e.target.value });
+    if (
+      newPost.title !== "" &&
+      newPost.location !== "" &&
+      newPost.post !== "" &&
+      newPost.media[0].url !== ""
+    ) {
+      setFormCompleted(true);
+    }
   };
 
   const handleMediaChange = e => {
@@ -47,6 +55,7 @@ export default function ImageUpload() {
       alert("Please add an image URL before submitting.");
     } else {
       addPost(newPost);
+      props.history.push("/profile");
     }
     console.log("new post: ", newPost);
   };

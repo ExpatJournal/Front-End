@@ -25,7 +25,7 @@ import { UserContext } from "./contexts/UserContext";
 
 const PostData = DummyData;
 
-function App() {
+function App(props) {
   const [userPosts, setUserPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
   console.log("Users postsssss", userPosts);
@@ -76,6 +76,8 @@ function App() {
             console.log(err.response);
           });
         setUserPosts([...userPosts, newPost]);
+        props.history.push("/profile");
+
         console.log("final new post: ", newPost);
       })
       .catch(err => {

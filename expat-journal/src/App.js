@@ -28,7 +28,7 @@ const PostData = DummyData;
 function App() {
   const [userPosts, setUserPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
-  console.log('Users postsssss', userPosts)
+  console.log("Users postsssss", userPosts);
 
   useEffect(() => {
     axios.get(`https://expatjournal.herokuapp.com/api/posts`).then(res => {
@@ -111,11 +111,13 @@ function App() {
       )
       .then(res => {
         console.log("PUT res: ", res);
-        const tempPosts = userPosts.map(post => {
+        const tempPosts = [...userPosts];
+        tempPosts.map(post => {
           if (post.id === res.data.id) {
             post = res.data;
           }
         });
+        console.log("tempPosts: ", tempPosts);
         setUserPosts(tempPosts);
       })
       .catch(err => {
@@ -154,12 +156,7 @@ function App() {
           />
 
           <Route exact path="/login" component={FormikLogInForm} />
-            <Route exact path="/feed" render={props => <Feed {...props} />} />
-    <Route
-            exact
-            path="/PhotoPage/:id"
-            render={props => <PhotoPage {...props} />}
-          />
+          <Route exact path="/feed" render={props => <Feed {...props} />} />
           <Route
             exact
             path="/PhotoPage/:id"

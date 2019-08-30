@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { PostsContext } from "../contexts/PostsContext";
 import FeedCard from "./FeedCard";
 import MobileHeader from "./MobileHeader";
-
+import DesktopHeader from "./DesktopHeader";
 
 const TokenFeed = () => {
   const { allPosts } = useContext(PostsContext);
@@ -12,6 +12,7 @@ const TokenFeed = () => {
   return (
     <div className="explore-header">
       <MobileHeader />
+      <DesktopHeader />
       {/* <p>My Feed</p> */}
       <div className="feed-wrapper">
         {allPosts.map(post => (

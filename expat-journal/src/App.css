@@ -184,7 +184,6 @@
   outline: none;
   text-decoration: none;
   color: inherit;
-
 }
 
 .post-img-wrapper {
@@ -195,11 +194,17 @@
 .burger-menu {
   text-align: right;
   margin: 10px;
-  display: inline-block;
+  /* position: absolute; */
+  /* right: 0px; */
+  /* top: 80px; */
+  /* width: 40px; */
+
+  /* display: inline-block;
+  float: right; */
+  display: flex;
+  flex-direction: column;
   float: right;
-  /* display: flex; */
-  /* flex-direction: column; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .fa-bars {
@@ -214,7 +219,7 @@
 
 .menu-wrapper {
   text-align: center;
-  width: 200px;
+  width: 100px;
 }
 
 .menu {
@@ -254,6 +259,17 @@
   color: white;
   width: 190px;
   cursor: pointer;
+}
+
+@media (min-width: 501px) {
+  .upload-btn {
+    display: none;
+  }
+}
+
+.profile-container h3 {
+  text-align: center;
+  color: #228b22;
 }
 
 .dashboard-header {
@@ -396,13 +412,14 @@
 @media (min-width: 501px) {
   .desktop-header {
     display: block;
+    margin-top: 20px;
   }
 
   .desktop-header img {
     width: 50px;
     height: 50px;
     margin-left: 50px;
-    margin-right: 35%;
+    margin-right: 30%;
     vertical-align: middle;
   }
 
@@ -435,14 +452,13 @@
   .desktop-header .burger-menu {
     vertical-align: middle;
     margin-top: 30px;
+    padding-top: 50px;
   }
 }
 @media only screen and (max-width: 750px) {
   .feed-card {
-
     margin: 2rem 1rem;
   }
-
 }
 
 .link-clear {

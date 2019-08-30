@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { Link } from 'react-router-dom';
-import "./DragNDrop.css";
+import "./NewPost.css";
 import { Icon } from 'semantic-ui-react'
 
 export default function ImageUpload() {
@@ -47,11 +47,10 @@ export default function ImageUpload() {
   return (
     <div className='pageContainer'>
 
-    <div>
-        <Icon name='star outline'/>
-    </div>
-
         <div className='pageText'>
+            <div className='btncontainer'>
+               <Link to='/profile'><button className='backbtn'>Back</button></Link>
+            </div>
             <h2>Upload an Image</h2>
     </div>
     <section className='centerContainer'>
@@ -115,7 +114,7 @@ export default function ImageUpload() {
                 </section>
     </section>
       <div className="btnContainer">
-        <Link className='cancelbtn' to='/'><p className='cancelBtn'>Cancel</p></Link>
+        <Link className='cancelbtn' to='/profile'><p className='cancelBtn'>Cancel</p></Link>
             <button 
             className="btn"
             onClick={handleSubmit} 

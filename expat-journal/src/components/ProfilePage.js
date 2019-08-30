@@ -34,7 +34,9 @@ const ProfilePage = props => {
           </Link>
         </button>
       </div>
-      <h3>My Posts</h3>
+      <div className='headertxt'>
+        <h3>My Posts</h3>
+      </div>
       <div className="post-container">
         {userPosts.map(post => (
           <ProfileCard

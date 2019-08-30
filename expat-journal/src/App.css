@@ -163,11 +163,20 @@
   margin: 10px;
   padding: 10px;
   border-radius: 15px;
-  background-color: #999999;
-  border: 1px solid #19a0fa;
+  background: #999999;
+  border: none;
   color: white;
   width: 190px;
   cursor: pointer;
+  box-shadow: 0px 5px 5px rgb(167, 167, 167);
+}
+
+.form-complete {
+  background: #228b22;
+}
+
+.form-complete:hover {
+  background: #a7d1a7;
 }
 
 .feed-img-wrapper {

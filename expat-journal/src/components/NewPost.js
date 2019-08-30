@@ -16,6 +16,8 @@ export default function ImageUpload() {
     ]
   });
 
+  const [formCompleted, setFormCompleted] = useState(false);
+
   const { addPost } = useContext(UserContext);
 
   const changeHandler = e => {
@@ -25,6 +27,14 @@ export default function ImageUpload() {
 
   const handleMediaChange = e => {
     setNewPost({ ...newPost, media: [{ url: e.target.value }] });
+    if (
+      newPost.title !== "" &&
+      newPost.location !== "" &&
+      newPost.post !== "" &&
+      newPost.media[0].url !== ""
+    ) {
+      setFormCompleted(true);
+    }
   };
 
   //   const captionhandleMediaChange = e => {
@@ -117,7 +127,11 @@ export default function ImageUpload() {
           </section>
         </section>
         <div className="btnContainer">
-          <button onClick={handleSubmit} type="submit" className="btn">
+          <button
+            onClick={handleSubmit}
+            type="submit"
+            className={"btn " + (formCompleted ? "form-complete" : "")}
+          >
             Submit
           </button>
         </div>

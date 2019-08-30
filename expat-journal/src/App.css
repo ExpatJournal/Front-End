@@ -178,19 +178,13 @@
   max-width: 200px;
   max-height: 220px;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 4eccd30340a57bb3462408224d000e0925e976d0
 .feed-link {
   border: none;
   outline: none;
   text-decoration: none;
   color: inherit;
-<<<<<<< HEAD
-=======
 
->>>>>>> 4eccd30340a57bb3462408224d000e0925e976d0
 }
 
 .post-img-wrapper {
@@ -451,30 +445,18 @@
 }
 @media only screen and (min-width: 750px) {
   .feed-card {
-<<<<<<< HEAD
-    margin: 2rem 8rem;
-  }
-  .feed-wrapper {
-    margin: 0 auto;
-    /* border: 1px solid black; */
-    width: 100%;
-  }
-=======
-
     margin: 2rem 1rem;
   }
 
->>>>>>> 4eccd30340a57bb3462408224d000e0925e976d0
 }
 
 .link-clear {
   text-decoration: none;
   color: black;
-  display: flex;
+  display: inline-block;
   margin: 0;
-  flex-direction: row;
-  flex-wrap: wrap;
-  /* border: 1px solid black; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
 }
 
 .link-wrapper {

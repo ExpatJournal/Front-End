@@ -5,6 +5,7 @@ import MobileHeader from "./MobileHeader";
 import LoggedInNav from "./LoggedInNav";
 import { Link } from "react-router-dom";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import DesktopHeader from "./DesktopHeader";
 
 const ProfilePage = props => {
   const { userPosts, removePost, setUserPosts } = useContext(UserContext);
@@ -22,8 +23,9 @@ const ProfilePage = props => {
 
   console.log("profile posts: ", userPosts);
   return (
-    <div>
+    <div className="profile-container">
       <MobileHeader />
+      <DesktopHeader />
       <div className="upload-button">
         <button className="upload-btn">
           <Link

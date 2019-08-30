@@ -163,11 +163,20 @@
   margin: 10px;
   padding: 10px;
   border-radius: 15px;
-  background-color: #999999;
-  border: 1px solid #19a0fa;
+  background: #999999;
+  border: none;
   color: white;
   width: 190px;
   cursor: pointer;
+  box-shadow: 0px 5px 5px rgb(167, 167, 167);
+}
+
+.form-complete {
+  background: #228b22;
+}
+
+.form-complete:hover {
+  background: #a7d1a7;
 }
 
 .feed-img-wrapper {
@@ -184,7 +193,6 @@
   outline: none;
   text-decoration: none;
   color: inherit;
-
 }
 
 .post-img-wrapper {
@@ -197,6 +205,19 @@
   text-align: right;
   margin: 10px;
 
+  /* position: absolute; */
+  /* right: 0px; */
+  /* top: 80px; */
+  /* width: 40px; */
+
+  /* display: inline-block;
+  float: right; */
+  display: flex;
+  flex-direction: column;
+  float: right;
+  /* border: 1px solid black; */
+
+
   display: flex;
   flex-direction: column;
   width:20rem;
@@ -205,6 +226,7 @@
 .navigation {
   display: flex;
   justify-content: flex-end;
+
 
 }
 
@@ -223,7 +245,7 @@
 
 .menu-wrapper {
   text-align: center;
-  width: 200px;
+  width: 100px;
 }
 
 .menu {
@@ -235,6 +257,12 @@
 
 .explore-header {
   text-align: center;
+}
+
+@media (min-width: 501px) {
+  .explore-header p {
+    display: none;
+  }
 }
 
 .welcome-btns {
@@ -263,6 +291,17 @@
   color: white;
   width: 190px;
   cursor: pointer;
+}
+
+@media (min-width: 501px) {
+  .upload-btn {
+    display: none;
+  }
+}
+
+.profile-container h3 {
+  text-align: center;
+  color: #228b22;
 }
 
 .dashboard-header {
@@ -405,13 +444,14 @@
 @media (min-width: 501px) {
   .desktop-header {
     display: block;
+    margin-top: 20px;
   }
 
   .desktop-header img {
     width: 50px;
     height: 50px;
     margin-left: 50px;
-    margin-right: 35%;
+    margin-right: 30%;
     vertical-align: middle;
   }
 
@@ -444,14 +484,13 @@
   .desktop-header .burger-menu {
     vertical-align: middle;
     margin-top: 30px;
+    padding-top: 50px;
   }
 }
 @media only screen and (max-width: 750px) {
   .feed-card {
-
     margin: 2rem 1rem;
   }
-
 }
 
 .link-clear {
@@ -461,4 +500,63 @@
   margin: 0 auto;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.feed-header {
+  display: none;
+}
+
+@media (min-width: 501px) {
+  .feed-header {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .feed-header img {
+    width: 50px;
+    height: 50px;
+    margin-left: 50px;
+    margin-right: 30%;
+    vertical-align: middle;
+  }
+
+  .feed-header input {
+    background: url("./search.png") left no-repeat;
+    height: 30px;
+    padding-left: 30px;
+    width: 500px;
+    border: 1px solid grey;
+    border-radius: 10px;
+  }
+
+  .feed-header .signup {
+    height: 30px;
+    box-shadow: 0px 5px 5px rgb(167, 167, 167);
+    margin-left: 380px;
+    margin-right: 70px;
+    background: #228b22;
+    color: white;
+    border: none;
+    width: 80px;
+    border-radius: 40px;
+  }
+
+  .feed-header .signup {
+    cursor: pointer;
+  }
+
+  .feed-header .login {
+    background: none;
+    border: none;
+  }
+
+  .feed-header .login:hover {
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .feed-card {
+    margin: 2rem 1rem;
+  }
 }
